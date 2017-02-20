@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>JSPTest</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	
+	<servlet>
+		<servlet-name>ex14</servlet-name>
+		<jsp-file>/ex14_config.jsp</jsp-file>
+		<init-param>
+			<param-name>fileDir</param-name>
+			<param-value>C:\JSP\upload</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ex14</servlet-name>
+		<url-pattern>/ex14_config.jsp</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 예외의 종류에 따라 에러 페이지 지정하기 -->
+	<!-- <error-page>
+		<exception-type>java.lang.NullPointerException</exception-type>
+		<location>/error/Null.jsp</location>
+	</error-page> -->
+	
+	
+	<!-- 상태 메시지별 에러 페이지 지정하기 -->
+	<!-- <error-page>
+		<error-code>500</error-code>
+		<location>/error/ServerError.jsp</location>		
+	</error-page>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/NotFound.jsp</location>
+	</error-page> -->
+	
+	
+	
+	<servlet>
+		<servlet-name>Hello</servlet-name>
+		<servlet-class>com.test.mvc.Hello</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Hello</servlet-name>
+		<url-pattern>/hello.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Ex35</servlet-name>
+		<servlet-class>com.test.mvc.Ex35</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Ex35</servlet-name>
+		<url-pattern>/ex35.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+<!-- 기본 게시판 예제 -->	
+	
+	
+<!-- 템플릿 페이지  -->
+	<servlet>
+		<servlet-name>Template</servlet-name>
+		<servlet-class>com.test.board.Template</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Template</servlet-name>
+		<url-pattern>/board/template.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<!-- 목록보기  -->
+	<servlet>
+		<servlet-name>List</servlet-name>
+		<servlet-class>com.test.board.List</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>List</servlet-name>
+		<url-pattern>/board/list.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 내용보기  -->
+	<servlet>
+		<servlet-name>View</servlet-name>
+		<servlet-class>com.test.board.View</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>View</servlet-name>
+		<url-pattern>/board/view.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 수정하기  -->
+	<servlet>
+		<servlet-name>Edit</servlet-name>
+		<servlet-class>com.test.board.Edit</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Edit</servlet-name>
+		<url-pattern>/board/edit.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 수정 완료  -->
+	<servlet>
+		<servlet-name>EditOk</servlet-name>
+		<servlet-class>com.test.board.EditOk</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditOk</servlet-name>
+		<url-pattern>/board/editok.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 삭제  -->
+	<servlet>
+		<servlet-name>Del</servlet-name>
+		<servlet-class>com.test.board.Del</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Del</servlet-name>
+		<url-pattern>/board/del.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 삭제완료  -->
+	<servlet>
+		<servlet-name>DelOk</servlet-name>
+		<servlet-class>com.test.board.DelOk</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DelOk</servlet-name>
+		<url-pattern>/board/delok.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 글 쓰기 -->
+	<servlet>
+		<servlet-name>Add</servlet-name>
+		<servlet-class>com.test.board.Add</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Add</servlet-name>
+		<url-pattern>/board/add.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 글 쓰기완료  -->
+	<servlet>
+		<servlet-name>AddOk</servlet-name>
+		<servlet-class>com.test.board.AddOk</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddOk</servlet-name>
+		<url-pattern>/board/addok.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 댓글쓰기  -->
+	<servlet>
+		<servlet-name>CommentOk</servlet-name>
+		<servlet-class>com.test.board.CommentOk</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CommentOk</servlet-name>
+		<url-pattern>/board/commentok.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 댓글삭제  -->
+	<servlet>
+		<servlet-name>DelCommentOk</servlet-name>
+		<servlet-class>com.test.board.DelCommentOk</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DelCommentOk</servlet-name>
+		<url-pattern>/board/delcommentok.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 파일 다운로드  -->
+	<servlet>
+		<servlet-name>Download</servlet-name>
+		<servlet-class>com.test.board.Download</servlet-class>
+	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Download</servlet-name>
+		<url-pattern>/board/download.do</url-pattern>
+	</servlet-mapping>
+</web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
