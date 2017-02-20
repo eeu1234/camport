@@ -11,7 +11,7 @@ public class DBUtil {
 	
 	public static Connection open() {
 		//System.out.println(2);
-		String url = "jdbc:mysql://128.199.107.242:3306/yseat";
+		String url = "jdbc:mysql://eeu1234.iptime.org:3306/eeu1234";
 		String id = "eeu1234";
 		String pw = "thskxk4889";
 		
@@ -23,7 +23,7 @@ public class DBUtil {
 			//System.out.println(3);
 			conn = DriverManager.getConnection(url, id, pw);
 			//System.out.println(4);
-			//System.out.println(conn.isClosed());
+			System.out.println(conn.isClosed());
 			
 		} catch (Exception e) {
 			System.out.println("DBUtil : " + e.toString());
@@ -37,7 +37,7 @@ public class DBUtil {
 	public static Connection open(String server
 							, String id, String pw) {
 		//System.out.println(1);
-		String url = "jdbc:mysql://" + server + ":3306/yseat";
+		String url = "jdbc:mysql://" + server + ":3306/eeu1234";
 				
 		try {
 			
