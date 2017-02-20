@@ -1,6 +1,6 @@
 package com.project.DTO;
 
-public class ReportComment {	//댓글
+public class ReportCommentDTO {	//댓글
 
 	private String reportCommentSeq;
 	private String reportCommentName;

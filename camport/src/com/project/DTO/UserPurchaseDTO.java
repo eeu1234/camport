@@ -1,6 +1,6 @@
 package com.project.DTO;
 
-public class UserPurchase {		//구매내역
+public class UserPurchaseDTO {		//구매내역
 
 	private String purchaseSeq;
 	private String purchaseDate;

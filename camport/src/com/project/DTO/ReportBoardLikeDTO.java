@@ -1,16 +1,16 @@
 package com.project.DTO;
 
-public class ReportBoardPolice {	//게시판 신고
+public class ReportBoardLikeDTO { //좋아요
 
-	private String policeSeq;
+	private String likeSeq;
 	private String userId;
 	private String reportBoardSeq;
 	
-	public String getPoliceSeq() {
-		return policeSeq;
+	public String getLikeSeq() {
+		return likeSeq;
 	}
-	public void setPoliceSeq(String policeSeq) {
-		this.policeSeq = policeSeq;
+	public void setLikeSeq(String likeSeq) {
+		this.likeSeq = likeSeq;
 	}
 	public String getUserId() {
 		return userId;
@@ -24,4 +24,6 @@ public class ReportBoardPolice {	//게시판 신고
 	public void setReportBoardSeq(String reportBoardSeq) {
 		this.reportBoardSeq = reportBoardSeq;
 	}
+	
+	
 }

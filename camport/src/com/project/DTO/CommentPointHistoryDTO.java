@@ -1,6 +1,6 @@
 package com.project.DTO;
 
-public class CommentPointHistory {	//댓글 포인트
+public class CommentPointHistoryDTO {	//댓글 포인트
 
 	private String commentPointSeq;
 	private String reportCommentSeq;
