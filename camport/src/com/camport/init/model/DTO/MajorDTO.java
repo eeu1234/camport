@@ -1,16 +1,16 @@
-package com.project.DTO;
+package com.camport.init.model.DTO;
 
 public class MajorDTO {
 	
-	private String majorSeq;
+	private int majorSeq;
 	private String majorName;
-	private String collageSeq;
+	private int collageSeq;
 	
 	
-	public String getMajorSeq() {
+	public int getMajorSeq() {
 		return majorSeq;
 	}
-	public void setMajorSeq(String majorSeq) {
+	public void setMajorSeq(int majorSeq) {
 		this.majorSeq = majorSeq;
 	}
 	public String getMajorName() {
@@ -19,12 +19,15 @@ public class MajorDTO {
 	public void setMajorName(String majorName) {
 		this.majorName = majorName;
 	}
-	public String getCollageSeq() {
+	public int getCollageSeq() {
 		return collageSeq;
 	}
-	public void setCollageSeq(String collageSeq) {
+	public void setCollageSeq(int collageSeq) {
 		this.collageSeq = collageSeq;
 	}
+	
+	
+
 	
 	
 }

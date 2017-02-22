@@ -1,15 +1,19 @@
-package com.project.DTO;
+package com.camport.DTO;
 
 public class AdminNoticeDTO {
 
-	private String noticeBoardSeq;
+	private int noticeBoardSeq;
 	private String noticeBoardName;
 	private String noticeBoardContent;
 	private String noticeBoardReadcount;
-	public String getNoticeBoardSeq() {
+	private String noticeBoardView;	
+	
+	
+	
+	public int getNoticeBoardSeq() {
 		return noticeBoardSeq;
 	}
-	public void setNoticeBoardSeq(String noticeBoardSeq) {
+	public void setNoticeBoardSeq(int noticeBoardSeq) {
 		this.noticeBoardSeq = noticeBoardSeq;
 	}
 	public String getNoticeBoardName() {
@@ -30,19 +34,31 @@ public class AdminNoticeDTO {
 	public void setNoticeBoardReadcount(String noticeBoardReadcount) {
 		this.noticeBoardReadcount = noticeBoardReadcount;
 	}
+	public String getNoticeBoardView() {
+		return noticeBoardView;
+	}
+	public void setNoticeBoardView(String noticeBoardView) {
+		this.noticeBoardView = noticeBoardView;
+	}
+	public String getAdminId() {
+		return adminId;
+	}
+	public void setAdminId(String adminId) {
+		this.adminId = adminId;
+	}
 	public String getNoticeBoardRegdate() {
 		return noticeBoardRegdate;
 	}
 	public void setNoticeBoardRegdate(String noticeBoardRegdate) {
 		this.noticeBoardRegdate = noticeBoardRegdate;
 	}
-	public String getNoticeBoardCommentSeq() {
-		return noticeBoardCommentSeq;
-	}
-	public void setNoticeBoardCommentSeq(String noticeBoardCommentSeq) {
-		this.noticeBoardCommentSeq = noticeBoardCommentSeq;
-	}
+	private String adminId;
 	private String noticeBoardRegdate;
-	private String noticeBoardCommentSeq;
+	
+	
+	
+	
+	
+
 	
 }

@@ -1,22 +1,22 @@
-package com.project.DTO;
+package com.camport.DTO;
 
 public class UserFavoriteBoardDTO {
 
-	private String favoriteSeq;
-	private String reportBoardSeq;
+	private int favoriteSeq;
+	private int reportBoardSeq;
 	private String userId;
 	
 	
-	public String getFavoriteSeq() {
+	public int getFavoriteSeq() {
 		return favoriteSeq;
 	}
-	public void setFavoriteSeq(String favoriteSeq) {
+	public void setFavoriteSeq(int favoriteSeq) {
 		this.favoriteSeq = favoriteSeq;
 	}
-	public String getReportBoardSeq() {
+	public int getReportBoardSeq() {
 		return reportBoardSeq;
 	}
-	public void setReportBoardSeq(String reportBoardSeq) {
+	public void setReportBoardSeq(int reportBoardSeq) {
 		this.reportBoardSeq = reportBoardSeq;
 	}
 	public String getUserId() {
@@ -25,6 +25,9 @@ public class UserFavoriteBoardDTO {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+	
+	
+
 	
 	
 }

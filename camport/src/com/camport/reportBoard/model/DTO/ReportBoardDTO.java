@@ -1,23 +1,25 @@
-package com.project.DTO;
+package com.camport.reportBoard.model.DTO;
 
 public class ReportBoardDTO {
 	
-	private String reportBoardSeq;
+	private int reportBoardSeq;
 	private String reportBoardName;
 	private String reportBoardContent;
 	private String reportBoardSummary;
-	private String reportBoardRegdate;
-	private String reportBoardReadcount;
-	private String reportBoardDowncount;
-	private String reportBoardPoint;
-	private String collageSeq;
+	private String reportBoardRegdate;	
+	private int reportBoardReadcount;
+	private int reportBoardDowncount;
+	private int reportBoardPoint;
+	private int collageSeq;
 	private String userId;
+	private int ruleSeq;
 	
 	
-	public String getReportBoardSeq() {
+	
+	public int getReportBoardSeq() {
 		return reportBoardSeq;
 	}
-	public void setReportBoardSeq(String reportBoardSeq) {
+	public void setReportBoardSeq(int reportBoardSeq) {
 		this.reportBoardSeq = reportBoardSeq;
 	}
 	public String getReportBoardName() {
@@ -44,28 +46,28 @@ public class ReportBoardDTO {
 	public void setReportBoardRegdate(String reportBoardRegdate) {
 		this.reportBoardRegdate = reportBoardRegdate;
 	}
-	public String getReportBoardReadcount() {
+	public int getReportBoardReadcount() {
 		return reportBoardReadcount;
 	}
-	public void setReportBoardReadcount(String reportBoardReadcount) {
+	public void setReportBoardReadcount(int reportBoardReadcount) {
 		this.reportBoardReadcount = reportBoardReadcount;
 	}
-	public String getReportBoardDowncount() {
+	public int getReportBoardDowncount() {
 		return reportBoardDowncount;
 	}
-	public void setReportBoardDowncount(String reportBoardDowncount) {
+	public void setReportBoardDowncount(int reportBoardDowncount) {
 		this.reportBoardDowncount = reportBoardDowncount;
 	}
-	public String getReportBoardPoint() {
+	public int getReportBoardPoint() {
 		return reportBoardPoint;
 	}
-	public void setReportBoardPoint(String reportBoardPoint) {
+	public void setReportBoardPoint(int reportBoardPoint) {
 		this.reportBoardPoint = reportBoardPoint;
 	}
-	public String getCollageSeq() {
+	public int getCollageSeq() {
 		return collageSeq;
 	}
-	public void setCollageSeq(String collageSeq) {
+	public void setCollageSeq(int collageSeq) {
 		this.collageSeq = collageSeq;
 	}
 	public String getUserId() {
@@ -74,6 +76,15 @@ public class ReportBoardDTO {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+	public int getRuleSeq() {
+		return ruleSeq;
+	}
+	public void setRuleSeq(int ruleSeq) {
+		this.ruleSeq = ruleSeq;
+	}
+
+	
+	
 	
 	
 	

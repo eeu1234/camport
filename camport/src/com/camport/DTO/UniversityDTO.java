@@ -1,14 +1,15 @@
-package com.project.DTO;
+package com.camport.DTO;
 
 public class UniversityDTO {
 	
-	private String universitySeq;
+	private int universitySeq;
 	private String universityName;
 	
-	public String getUniversitySeq() {
+	
+	public int getUniversitySeq() {
 		return universitySeq;
 	}
-	public void setUniversitySeq(String universitySeq) {
+	public void setUniversitySeq(int universitySeq) {
 		this.universitySeq = universitySeq;
 	}
 	public String getUniversityName() {
@@ -17,5 +18,6 @@ public class UniversityDTO {
 	public void setUniversityName(String universityName) {
 		this.universityName = universityName;
 	}
+	
 	
 }

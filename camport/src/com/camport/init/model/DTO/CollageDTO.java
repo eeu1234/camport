@@ -1,16 +1,16 @@
-package com.project.DTO;
+package com.camport.init.model.DTO;
 
 public class CollageDTO {
 	
-	private String collageSeq;
+	private int collageSeq;
 	private String collageName;
-	private String universitySeq;
+	private int universitySeq;
 	
 	
-	public String getCollageSeq() {
+	public int getCollageSeq() {
 		return collageSeq;
 	}
-	public void setCollageSeq(String collageSeq) {
+	public void setCollageSeq(int collageSeq) {
 		this.collageSeq = collageSeq;
 	}
 	public String getCollageName() {
@@ -19,12 +19,14 @@ public class CollageDTO {
 	public void setCollageName(String collageName) {
 		this.collageName = collageName;
 	}
-	public String getUniversitySeq() {
+	public int getUniversitySeq() {
 		return universitySeq;
 	}
-	public void setUniversitySeq(String universitySeq) {
+	public void setUniversitySeq(int universitySeq) {
 		this.universitySeq = universitySeq;
 	}
+	
+
 	
 	
 }

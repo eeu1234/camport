@@ -1,18 +1,20 @@
-package com.project.DTO;
+package com.camport.reportBoard.model.DTO;
 
 public class ReportBoardFileDTO {
 	
-	private String reportBoardFileSeq;
+	private int reportBoardFileSeq;
 	private String reportBoardFileName;
 	private String reportBoardFileOrgname;
 	private String reportBoardFileSize;
 	private String reportBoardFileType;
-	private String reportBoardSeq;
+	private int reportBoardSeq;
 	
-	public String getReportBoardFileSeq() {
+	
+	
+	public int getReportBoardFileSeq() {
 		return reportBoardFileSeq;
 	}
-	public void setReportBoardFileSeq(String reportBoardFileSeq) {
+	public void setReportBoardFileSeq(int reportBoardFileSeq) {
 		this.reportBoardFileSeq = reportBoardFileSeq;
 	}
 	public String getReportBoardFileName() {
@@ -39,11 +41,13 @@ public class ReportBoardFileDTO {
 	public void setReportBoardFileType(String reportBoardFileType) {
 		this.reportBoardFileType = reportBoardFileType;
 	}
-	public String getReportBoardSeq() {
+	public int getReportBoardSeq() {
 		return reportBoardSeq;
 	}
-	public void setReportBoardSeq(String reportBoardSeq) {
+	public void setReportBoardSeq(int reportBoardSeq) {
 		this.reportBoardSeq = reportBoardSeq;
 	}
+
+	
 	
 }

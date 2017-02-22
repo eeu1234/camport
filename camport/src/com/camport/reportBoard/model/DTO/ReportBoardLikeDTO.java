@@ -1,15 +1,16 @@
-package com.project.DTO;
+package com.camport.reportBoard.model.DTO;
 
 public class ReportBoardLikeDTO { //좋아요
 
-	private String likeSeq;
+	private int likeSeq;
 	private String userId;
-	private String reportBoardSeq;
+	private int reportBoardSeq;
 	
-	public String getLikeSeq() {
+	
+	public int getLikeSeq() {
 		return likeSeq;
 	}
-	public void setLikeSeq(String likeSeq) {
+	public void setLikeSeq(int likeSeq) {
 		this.likeSeq = likeSeq;
 	}
 	public String getUserId() {
@@ -18,12 +19,13 @@ public class ReportBoardLikeDTO { //좋아요
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getReportBoardSeq() {
+	public int getReportBoardSeq() {
 		return reportBoardSeq;
 	}
-	public void setReportBoardSeq(String reportBoardSeq) {
+	public void setReportBoardSeq(int reportBoardSeq) {
 		this.reportBoardSeq = reportBoardSeq;
 	}
+	
 	
 	
 }

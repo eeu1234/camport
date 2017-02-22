@@ -1,19 +1,19 @@
-package com.project.DTO;
+package com.camport.init.model.DTO;
 
 public class UserDTO {
 	
-	private String userId;
+	private int userId;
 	private String userName;
 	private String userPw;
 	private String userTel;
-	private String point;
-	private String majorSeq;
+	private int point;
+	private int majorSeq;
 	
 	
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 	public String getUserName() {
@@ -34,19 +34,21 @@ public class UserDTO {
 	public void setUserTel(String userTel) {
 		this.userTel = userTel;
 	}
-	public String getPoint() {
+	public int getPoint() {
 		return point;
 	}
-	public void setPoint(String point) {
+	public void setPoint(int point) {
 		this.point = point;
 	}
-	public String getMajorSeq() {
+	public int getMajorSeq() {
 		return majorSeq;
 	}
-	public void setMajorSeq(String majorSeq) {
+	public void setMajorSeq(int majorSeq) {
 		this.majorSeq = majorSeq;
 	}
 	
+	
+
 	
 	
 }
