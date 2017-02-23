@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'NanumGothic';
+  src: url('../font/NanumGothic.eot');
+  src: url('../font/NanumGothic.eot?#iefix') format('embedded-opentype'),
+       url('../font/NanumGothic.woff') format('woff'),
+       url('../font/NanumGothic.ttf') format('truetype'),
+       url('../font/NanumGothic.svg#NanumGothic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NanumGothicBold';
+  src: url('../font/NanumGothicBold.eot');
+  src: url('../font/NanumGothicBold.eot?#iefix') format('embedded-opentype'),
+       url('../font/NanumGothicBold.woff') format('woff'),
+       url('../font/NanumGothicBold.ttf') format('truetype'),
+       url('../font/NanumGothicBold.svg#NanumGothicBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Reset */
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,blockquote,strong,xmp{margin:0; padding:0; font-size:14px; line-height:20px; font-weight:normal; font-family: 'NanumGothic', arial, '돋움', Helvetica, verdana, futura, tahoma, sans-serif; color:#333;}
+legend,caption{display:none;}
+img,fieldset{border:0;}
+ul,ol{list-style:none;}
+a:link,a:visited,a:hover,a:active{text-decoration:none;color:#333;}
+a{display:block;}
+
+.menu{margin:20px;}
+h2{font:20px/40px NanumGothicBold}
+.menu>ul{border:1px solid #ddd; width:200px;}
+.menu>ul>li>a{border-top:1px solid #ddd}
+.menu>ul>li:first-child>a{border-top:0}
+.menu>ul>li>a{font:14px/40px NanumGothicBold; padding:0 10px; background:url(../images/arrow2.png) no-repeat right 10px center;}
+.menu ul ul{background:#f2f2f2; padding:10px 20px }
+.menu ul ul a{font:12px/20px NanumGothic;}
+.menu ul ul a:hover{color:blue; text-decoration:underline}
+.menu .active>a{background:#004f9c url(../images/arrow.png) no-repeat right 10px center; color:#fff}

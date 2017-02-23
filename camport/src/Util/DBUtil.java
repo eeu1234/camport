@@ -23,7 +23,7 @@ public class DBUtil {
 			//System.out.println(3);
 			conn = DriverManager.getConnection(url, id, pw);
 			//System.out.println(4);
-			System.out.println(conn.isClosed());
+			
 			
 		} catch (Exception e) {
 			System.out.println("DBUtil : " + e.toString());
