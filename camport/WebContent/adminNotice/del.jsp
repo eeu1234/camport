@@ -27,15 +27,15 @@
 
 <script>
 $(document).ready(function() {
-	dummy();
+	//dummy();
 });
 
 
 function dummy() {
-	$("email").val("damin@test.com");
+	/* $("email").val("damin@test.com");
 	$("subject").val("테스트 입니다.");
 	$("content").val("게시판 테스트입니다.");
-	
+	 */
 	
 }
 
@@ -45,29 +45,26 @@ function dummy() {
 </head>
 <body>
 
-	<!--admin  -->
+	<!--del.jsp  -->
 	<div id="main">
 		<%@include file="/inc/top.jsp" %>
 	<div id="middle">
-		<form method="POST" action="/camport/adminNotice/addok.do">
+		<form method="POST" action="/camport/adminNotice/delok.do">
 			<table id="tbl1" class="table table-striped">
+			
 				<tr>
-					<th>아이디</th>
-					<td><input type="email" name="email" id="email" required class="form-control"></td>
+					<th>암호</th>
+					<td><input type="password" name="pw" id="pw" required class="form-control"></td>
 				</tr>
-				<tr>
-					<th>제목</th>
-					<td><input type="text" name="subject" id="subject" required class="form-control"></td>
-				</tr>
-				<tr>
-					<th>내용</th>
-					<td><textarea name="content" id="content" required class="form-control"></textarea></td>
-				</tr>
+				
 			</table>
 			<div id="btnList">
 				<input type="button" value="돌아가기" class="btn btn-default" onclick="history.back();">
-				<input type="submit" value="글쓰기" class="btn btn-primary">
+				<input type="submit" value="삭제하기" class="btn btn-primary">
 			</div>
+			
+			<!--삭제할 글번호-->
+			<input type="hidden" name="noticeBoardSeq" value="${noticeBoardSeq}">
 		</form>
 		
 	</div><!--middle-->

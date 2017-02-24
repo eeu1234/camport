@@ -27,16 +27,14 @@ public class AdminDAO {
 	public int add(AdminDTO dto){	
 			try {
 				
-				String sql="INSERT INTO ADMIN_NOTICE(NOTICE_BOARD_SEQ,NOTICE_BOARD_NAME,NOTICE_BOARD_CONTENT,NOTICE_BOARD_REGDATE,NOTICE_BOARD_READCOUNT)   VALUES(?,?,?,DEFAULT,DEFAULT)";
+				String sql="INSERT INTO ADMIN_NOTICE(NOTICE_BOARD_NAME,NOTICE_BOARD_CONTENT,ADMIN_ID)   VALUES(?,?,?)";
 				
 				PreparedStatement stat = conn.prepareStatement(sql);
-				stat.setInt(1,dto.getNoticeBoardSeq());
-				stat.setString(2, dto.getNoticeBoardName());
-				stat.setString(3, dto.getNoticeBoardContent());
-				stat.setString(4, dto.getNoticeBoardRegdate());
-				stat.setString(5, dto.getNoticeBoardReadcount());
+				stat.setString(1, dto.getNoticeBoardName());
+				stat.setString(2, dto.getNoticeBoardContent());
+				stat.setString(3, "admin");
 				
-				
+				return stat.executeUpdate();//글쓰기
 			} catch (Exception e) {
 				System.out.println("add: " + e.toString());
 			}
@@ -50,7 +48,7 @@ public class AdminDAO {
 		
 		try {
 			
-			String sql = "SELECT NOTICE_BOARD_SEQ,NOTICE_BOARD_NAME,NOTICE_BOARD_READCOUNT,NOTICE_BOARD_VIEW FROM ADMIN_NOTICE";
+			String sql = "SELECT NOTICE_BOARD_SEQ,NOTICE_BOARD_NAME,NOTICE_BOARD_READCOUNT,NOTICE_BOARD_REGDATE,NOTICE_BOARD_VIEW FROM ADMIN_NOTICE";
 			
 			PreparedStatement stat = conn.prepareStatement(sql);
 			
@@ -65,6 +63,7 @@ public class AdminDAO {
 				dto.setNoticeBoardSeq((rs.getInt("NOTICE_BOARD_SEQ")));
 				dto.setNoticeBoardName(rs.getString("NOTICE_BOARD_NAME"));				
 				dto.setNoticeBoardReadcount(rs.getString("NOTICE_BOARD_READCOUNT"));
+				dto.setNoticeBoardRegdate(rs.getString("NOTICE_BOARD_REGDATE").substring(0, 10));
 				dto.setNoticeBoardView(rs.getString("NOTICE_BOARD_VIEW"));
 				
 				list.add(dto);
@@ -80,6 +79,143 @@ public class AdminDAO {
 		
 		return null;
 	}
+	
+	public AdminDTO get(int noticeBoardSeq) {
+		
+		
+		try {
+			
+			String sql="SELECT * FROM ADMIN_NOTICE WHERE NOTICE_BOARD_SEQ =?";
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setInt(1,noticeBoardSeq);
+			
+			
+			ResultSet rs = stat.executeQuery();
+			
+			if(rs.next()) {
+				
+				AdminDTO dto = new AdminDTO();
+				dto.setNoticeBoardSeq(rs.getInt("NOTICE_BOARD_SEQ"));
+				dto.setNoticeBoardName(rs.getString("NOTICE_BOARD_NAME"));
+				dto.setNoticeBoardContent(rs.getString("NOTICE_BOARD_CONTENT"));
+				dto.setNoticeBoardReadcount(rs.getString("NOTICE_BOARD_READCOUNT"));
+				dto.setNoticeBoardView(rs.getString("NOTICE_BOARD_VIEW"));
+				dto.setNoticeBoardRegdate(rs.getString("NOTICE_BOARD_REGDATE"));
+				
+				return dto;
+			}
+			
+			
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return null;
+	}
+
+
+
+	public void addReadCount(int noticeBoardSeq) {
+		
+		try {
+
+			String sql = "UPDATE ADMIN_NOTICE SET NOTICE_BOARD_READCOUNT = NOTICE_BOARD_READCOUNT+1 WHERE NOTICE_BOARD_SEQ = ?";
+			
+			PreparedStatement stat = conn.prepareStatement(sql);
+			
+			stat.setInt(1,noticeBoardSeq);
+			
+			stat.executeUpdate();
+
+		} catch (Exception e) {
+
+			System.out.println(e.toString());
+
+		}
+		
+	}
+	
+	//EditOk 서블릿이 수정할 모든 내용을 줄테니 수정
+	public int edit(AdminDTO dto){
+		
+		try {
+			
+			String sql="UPDATE ADMIN_NOTICE SET NOTICE_BOARD_NAME = ?,NOTICE_BOARD_CONTENT= ? WHERE NOTICE_BOARD_SEQ=?";
+			
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setString(1, dto.getNoticeBoardName());
+			stat.setString(2, dto.getNoticeBoardContent());
+			stat.setInt(3, dto.getNoticeBoardSeq());
+			System.out.println( "번호" +dto.getNoticeBoardSeq());
+			System.out.println( "제목" +dto.getNoticeBoardName());
+			System.out.println( "내용" +dto.getNoticeBoardContent());
+			return stat.executeUpdate();
+			
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		
+		return 0;
+		
+		
+	}
+
+
+	//수정 확인
+	public boolean check(AdminDTO dto) {
+		
+		
+		try {
+			
+			String sql = "SELECT COUNT(*) AS CNT FROM ADMIN_NOTICE WHERE NOTICE_BOARD_SEQ=?";
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setInt(1, dto.getNoticeBoardSeq());
+			
+			ResultSet rs = stat.executeQuery();
+			
+			if(rs.next()){
+				if(rs.getInt("cnt") == 1){
+				
+					return true;
+				}
+			}
+			
+		} catch (Exception e) {
+			
+		}
+		
+		
+		
+		
+		return false;
+	}
+	
+	public int del(AdminDTO dto) {
+		
+		try {
+			
+			String sql = "DELETE FROM ADMIN_NOTICE WHERE NOTICE_BOARD_SEQ = ?";
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setInt(1, dto.getNoticeBoardSeq());
+			
+			return stat.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return 0;
+	}
+	
+	
+	
+	
 	
 	
 

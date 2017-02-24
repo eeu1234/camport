@@ -47,6 +47,57 @@
   </servlet-mapping>
   
     
+  <!--내용보기 페이지  -->	
+  <servlet>
+  	<servlet-name>View</servlet-name>
+  	<servlet-class>com.camport.admin.controller.View</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>View</servlet-name>
+  	<url-pattern>/adminNotice/view.do</url-pattern>
+  </servlet-mapping>
+  
+  <!--수정하기  -->
+    <servlet>
+  	<servlet-name>Edit</servlet-name>
+  	<servlet-class>com.camport.admin.controller.Edit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Edit</servlet-name>
+  	<url-pattern>/adminNotice/edit.do</url-pattern>
+  </servlet-mapping>
+  
+    <!--수정처리 페이지  -->
+    <servlet>
+  	<servlet-name>EditOk</servlet-name>
+  	<servlet-class>com.camport.admin.controller.EditOk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>EditOk</servlet-name>
+  	<url-pattern>/adminNotice/editok.do</url-pattern>
+  </servlet-mapping>
+  
+  <!--삭제 페이지  -->
+    <servlet>
+  	<servlet-name>Dell</servlet-name>
+  	<servlet-class>com.camport.admin.controller.Del</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Dell</servlet-name>
+  	<url-pattern>/adminNotice/del.do</url-pattern>
+  </servlet-mapping>
+  
+  <!--삭제처리 페이지  -->
+    <servlet>
+  	<servlet-name>DelOk</servlet-name>
+  	<servlet-class>com.camport.admin.controller.DelOk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DelOk</servlet-name>
+  	<url-pattern>/adminNotice/delok.do</url-pattern>
+  </servlet-mapping>
+    
+    
 </web-app>
 
 

@@ -13,16 +13,17 @@ import com.camport.admin.model.DTO.AdminDTO;
 
 public class AddOk extends HttpServlet{
 
+
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	
 	//1.
 	request.setCharacterEncoding("UTF-8");
 	
-	String adminId = request.getParameter("adminId");
-	String noticeBoardName = request.getParameter("noticeBoardName");
-	String noticeBoardContent = request.getParameter("noticeBoardContent");
+	String adminId = request.getParameter("admin");
+	String noticeBoardName = request.getParameter("subject");
+	String noticeBoardContent = request.getParameter("content");
 	
 	
 	//2.
@@ -33,7 +34,7 @@ public class AddOk extends HttpServlet{
 	
 	AdminDAO dao = new AdminDAO();
 	int result = dao.add(dto);
-	
+	System.out.println(result);
 	
 	//3.
 	request.setAttribute("result", result);
