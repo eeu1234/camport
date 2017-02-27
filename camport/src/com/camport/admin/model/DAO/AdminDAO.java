@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import com.camport.admin.model.DTO.AdminDTO;
-import com.camport.admin.model.DTO.AdminNoticeDTO;
+import com.camport.admin.model.DTO.AdminSDTO;
 
 import Util.DBUtil;
 
@@ -27,12 +27,13 @@ public class AdminDAO {
 	public int add(AdminDTO dto){	
 			try {
 				
-				String sql="INSERT INTO ADMIN_NOTICE(NOTICE_BOARD_NAME,NOTICE_BOARD_CONTENT,ADMIN_ID)   VALUES(?,?,?)";
+				String sql="INSERT INTO ADMIN_NOTICE(NOTICE_BOARD_NAME,NOTICE_BOARD_CONTENT,NOTICE_BOARD_THREAD,NOTICE_BOARD_DEPTH,ADMIN_ID)VALUES(?,?,?,?,?)";
 				
 				PreparedStatement stat = conn.prepareStatement(sql);
 				stat.setString(1, dto.getNoticeBoardName());
 				stat.setString(2, dto.getNoticeBoardContent());
 				stat.setString(3, "admin");
+				
 				
 				return stat.executeUpdate();//글쓰기
 			} catch (Exception e) {
@@ -44,11 +45,23 @@ public class AdminDAO {
 			
 		}
 
-	public ArrayList<AdminDTO> list() {
+	public ArrayList<AdminDTO> list(AdminSDTO sdto) {
 		
 		try {
 			
-			String sql = "SELECT NOTICE_BOARD_SEQ,NOTICE_BOARD_NAME,NOTICE_BOARD_READCOUNT,NOTICE_BOARD_REGDATE,NOTICE_BOARD_VIEW FROM ADMIN_NOTICE";
+		    String where = "";
+	         if (sdto.isSearch()) {
+	            where = String.format("AND %s like '%%%s%%'", sdto.getColumn(), sdto.getWord());
+	         }
+			
+	         String sql = "SELECT NOTICE_BOARD_SEQ,NOTICE_BOARD_NAME,NOTICE_BOARD_READCOUNT,NOTICE_BOARD_REGDATE,NOTICE_BOARD_VIEW FROM ADMIN_NOTICE WHERE NOTICE_BOARD_VIEW = 'y'"
+	                 + where + "ORDER BY NOTICE_BOARD_SEQ DESC";
+			
+			
+			
+			
+			
+			
 			
 			PreparedStatement stat = conn.prepareStatement(sql);
 			
@@ -63,7 +76,7 @@ public class AdminDAO {
 				dto.setNoticeBoardSeq((rs.getInt("NOTICE_BOARD_SEQ")));
 				dto.setNoticeBoardName(rs.getString("NOTICE_BOARD_NAME"));				
 				dto.setNoticeBoardReadcount(rs.getString("NOTICE_BOARD_READCOUNT"));
-				dto.setNoticeBoardRegdate(rs.getString("NOTICE_BOARD_REGDATE").substring(0, 10));
+				dto.setNoticeBoardRegdate(rs.getString("NOTICE_BOARD_REGDATE"));
 				dto.setNoticeBoardView(rs.getString("NOTICE_BOARD_VIEW"));
 				
 				list.add(dto);
@@ -211,6 +224,58 @@ public class AdminDAO {
 		}
 		
 		return 0;
+	}
+
+
+
+	public int getTotal(AdminSDTO sdto) {
+		
+		
+		try {
+		
+			
+			String where = "";
+			if (sdto.isSearch()) {
+				where = String.format("WHERE %s LIKE '%%s%%'"
+											,sdto.getColumn()
+											,sdto.getWord());
+			}
+			String sql = "SELECT COUNT(*) AS CNT FROM ADMIN_NOTICE" + where;
+			PreparedStatement stat = conn.prepareStatement(sql);
+			ResultSet rs = stat.executeQuery();
+			if(rs.next()){
+				return rs.getInt("cnt");
+			}
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		
+		return 0;
+	}
+
+
+
+
+
+
+	public void updateThread(int noticeBoardThread, int prevThread) {
+		
+		try {
+
+			String sql = String.format("UPDATE ADMIN_NOTICE SET NOTICE_BOARD_THREAD = NOTICE_BOARD_THREAD - 1 WHERE NOTICE_BOARD_THREAD > ? AND NOTICE_BOARD_THREAD < ?");
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setInt(1, prevThread);
+			stat.setInt(2, noticeBoardThread);
+			stat.executeUpdate();
+
+		} catch (Exception e) {
+
+			System.out.println(e.toString());
+
+		}
+		
+		
 	}
 	
 	
