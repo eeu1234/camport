@@ -2,22 +2,31 @@ package com.project.DTO;
 
 public class ReportBoardDTO {
 	
-	private String reportBoardSeq;
+	private int reportBoardSeq;
 	private String reportBoardName;
 	private String reportBoardContent;
 	private String reportBoardSummary;
 	private String reportBoardRegdate;
-	private String reportBoardReadcount;
-	private String reportBoardDowncount;
-	private String reportBoardPoint;
-	private String collageSeq;
+	private int reportBoardReadcount;
+	private int reportBoardDowncount;
+	private int reportBoardPoint;
+	private int collageSeq;
 	private String userId;
+	private int ruleSeq;
 	
+	//게시판 비밀번호 지정
+	private String pw;
+	private int commentcount; //댓글수
+	private String newimg;	  //새로운 글 이미지
+	private String reportBoardFileName;		//파일이름	
+	private String reportBoardFileOrgname;	//파일이름
+	private int thread;			 //계층형
+	private int depth;			//계층형
 	
-	public String getReportBoardSeq() {
+	public int getReportBoardSeq() {
 		return reportBoardSeq;
 	}
-	public void setReportBoardSeq(String reportBoardSeq) {
+	public void setReportBoardSeq(int reportBoardSeq) {
 		this.reportBoardSeq = reportBoardSeq;
 	}
 	public String getReportBoardName() {
@@ -44,28 +53,28 @@ public class ReportBoardDTO {
 	public void setReportBoardRegdate(String reportBoardRegdate) {
 		this.reportBoardRegdate = reportBoardRegdate;
 	}
-	public String getReportBoardReadcount() {
+	public int getReportBoardReadcount() {
 		return reportBoardReadcount;
 	}
-	public void setReportBoardReadcount(String reportBoardReadcount) {
+	public void setReportBoardReadcount(int reportBoardReadcount) {
 		this.reportBoardReadcount = reportBoardReadcount;
 	}
-	public String getReportBoardDowncount() {
+	public int getReportBoardDowncount() {
 		return reportBoardDowncount;
 	}
-	public void setReportBoardDowncount(String reportBoardDowncount) {
+	public void setReportBoardDowncount(int reportBoardDowncount) {
 		this.reportBoardDowncount = reportBoardDowncount;
 	}
-	public String getReportBoardPoint() {
+	public int getReportBoardPoint() {
 		return reportBoardPoint;
 	}
-	public void setReportBoardPoint(String reportBoardPoint) {
+	public void setReportBoardPoint(int reportBoardPoint) {
 		this.reportBoardPoint = reportBoardPoint;
 	}
-	public String getCollageSeq() {
+	public int getCollageSeq() {
 		return collageSeq;
 	}
-	public void setCollageSeq(String collageSeq) {
+	public void setCollageSeq(int collageSeq) {
 		this.collageSeq = collageSeq;
 	}
 	public String getUserId() {
@@ -74,7 +83,53 @@ public class ReportBoardDTO {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+	public int getRuleSeq() {
+		return ruleSeq;
+	}
+	public void setRuleSeq(int ruleSeq) {
+		this.ruleSeq = ruleSeq;
+	}
+	public String getPw() {
+		return pw;
+	}
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+	public int getCommentcount() {
+		return commentcount;
+	}
+	public void setCommentcount(int commentcount) {
+		this.commentcount = commentcount;
+	}
+	public String getNewimg() {
+		return newimg;
+	}
+	public void setNewimg(String newimg) {
+		this.newimg = newimg;
+	}
+	public String getReportBoardFileName() {
+		return reportBoardFileName;
+	}
+	public void setReportBoardFileName(String reportBoardFileName) {
+		this.reportBoardFileName = reportBoardFileName;
+	}
+	public String getReportBoardFileOrgname() {
+		return reportBoardFileOrgname;
+	}
+	public void setReportBoardFileOrgname(String reportBoardFileOrgname) {
+		this.reportBoardFileOrgname = reportBoardFileOrgname;
+	}
+	public int getThread() {
+		return thread;
+	}
+	public void setThread(int thread) {
+		this.thread = thread;
+	}
+	public int getDepth() {
+		return depth;
+	}
+	public void setDepth(int depth) {
+		this.depth = depth;
+	}			 //계층형
+}	
 	
-	
-	
-}

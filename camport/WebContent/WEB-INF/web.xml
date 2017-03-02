@@ -25,6 +25,136 @@
 		<servlet-name>Download</servlet-name>
 		<url-pattern>/board/download.do</url-pattern>
 	</servlet-mapping>
+	
+	
+	<!-- 기본 게시판 -->
+	
+	<!-- 템플릿 페이지 -->
+	<servlet>
+		<servlet-name>Template</servlet-name>
+		<servlet-class>com.project.main.Template</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Template</servlet-name>
+		<url-pattern>/camport.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 목록(list) 페이지 -->
+	<servlet>
+		<servlet-name>List</servlet-name>
+		<servlet-class>com.project.main.List</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>List</servlet-name>
+		<url-pattern>/list.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 글 상세보기(view) 페이지 -->
+	<servlet>
+		<servlet-name>View</servlet-name>
+		<servlet-class>com.project.main.View</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>View</servlet-name>
+		<url-pattern>/view.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 글쓰기폼(add) 페이지 -->
+	<servlet>
+		<servlet-name>Add</servlet-name>
+		<servlet-class>com.project.main.Add</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Add</servlet-name>
+		<url-pattern>/add.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 글쓰기처리(addok) 페이지 -->
+	<servlet>
+		<servlet-name>AddOk</servlet-name>
+		<servlet-class>com.project.main.AddOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddOk</servlet-name>
+		<url-pattern>/addok.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 로그인폼(loginPage) 페이지 -->
+	<servlet>
+		<servlet-name>LoginPage</servlet-name>
+		<servlet-class>com.project.main.LoginPage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginPage</servlet-name>
+		<url-pattern>/loginPage.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 글삭제폼(del) 페이지 -->
+	<servlet>
+		<servlet-name>Del</servlet-name>
+		<servlet-class>com.project.main.Del</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Del</servlet-name>
+		<url-pattern>/del.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 글삭제처리(delok) 페이지 -->
+	<servlet>
+		<servlet-name>DelOk</servlet-name>
+		<servlet-class>com.project.main.DelOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DelOk</servlet-name>
+		<url-pattern>/delOk.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 수정하기 -->
+	<servlet>
+		<servlet-name>Edit</servlet-name>
+		<servlet-class>com.project.main.Edit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Edit</servlet-name>
+		<url-pattern>/edit.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 수정 완료 -->
+	<servlet>
+		<servlet-name>EditOk</servlet-name>
+		<servlet-class>com.project.main.EditOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditOk</servlet-name>
+		<url-pattern>/editok.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<!-- 댓글확인 -->
+	<servlet>
+		<servlet-name>ReportCommentOk</servlet-name>
+		<servlet-class>com.project.main.ReportCommentOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReportCommentOk</servlet-name>
+		<url-pattern>/reportCommentOk.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 댓글 삭제 --> 
+	<servlet>
+		<servlet-name>DelCommentOk</servlet-name>
+		<servlet-class>com.project.main.DelCommentOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DelCommentOk</servlet-name>
+		<url-pattern>/delCommentOk.do</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>
 
 

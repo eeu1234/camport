@@ -1,0 +1,184 @@
+	#wrapper{
+		width:1280px;
+		margin:0 auto;
+	}
+	ul,ol{
+		list-style:none;
+	}
+	#mains {
+	      width: 100%;
+	      border-right:2px solid #000;
+	      border-left:2px solid #000;      
+	}
+	#ad{
+		/* 너비폭은 유지 */
+		width: 800px;
+		height:300px;
+		border-bottom:3px solid red;
+		position:relative;
+		background-image: url("../images/main/sea.jpg");
+		background-repeat: no-repeat;
+		background-size: 800px 300px;
+	}
+	#ad:hover{
+		background-image:url("../images/main/ground.jpg");
+		background-repeat: no-repeat;
+		background-size: 800px 300px;
+		transition: 5.0s; /* event 전환 효과 5초*/
+	}
+	#login{
+		width:479px;
+		height:300px;
+		background-color:#545353;
+		position:relative;
+		bottom:300px;
+		right:-799px;
+		/* top:123px; */
+		/* top: 73px; */
+		/*템플릿 불러오는 과정 중 header메뉴 내려옴*/
+		/* right:163px; */
+		/* right:312px; */
+		/* 연한초록 - 위치 확인값 */	
+	}
+	#buttons1{ /* 로그인 */
+		position: absolute;
+		right: 90px;
+		bottom: 100px;
+	}
+	#buttons2{ /* 회원가입 */
+		position: absolute;
+		right: 10px;
+		bottom: 100px;
+	}
+	#buttons3{
+		position: absolute;
+		right: 180px;
+		bottom: 100px;
+	}
+	/* 메인 테이블 3가지 */
+	#mains .contents01{
+		position:relative;
+		width: 400px;
+		margin:20px 10px 10px 10px;
+		display:inline-block;
+	}
+	#mains .contents01 thead tr th{
+		text-align:center;
+	}
+	#slide{
+		width:1280px;
+		height:200px;
+		/* margin-bottom:50px; */
+	}
+	#slide div{
+		display:inline-block;
+	}
+/* 버튼 */
+	.second button{
+		border:1px solid #dfdfdf;
+		border-radius:5px;
+		color:#999;
+		width:240px;
+		height:50px;
+		text-align:center;
+		line-height:30px;
+		padding-left:40px;
+		position:relative;
+		background:-webkit-linear-gradient(#fff 1px,#ececec 1px,#dbdbdb,#ececec);
+		box-shadow:0 3px 5px rgba(0,0,0,0.4);
+	}
+	
+	.btn_21 span{
+		display:block;
+		background-image:-webkit-linear-gradient(#ffc126,#f77d28);
+		border:1px solid #c68b49;
+		border-radius:2px;
+		position:absolute;
+		left:8px;
+		top:-4px
+	}
+	.btn_21 span:after{
+		display:block;
+		content:"";
+		width:28px;
+		height:25px;
+		background:url(../images/main/ico01.png) no-repeat center;
+		background-size:auto 22px
+	}/* second button */
+	.btn_22 span{
+		display:block;
+		background-image:-webkit-linear-gradient(#4082c6,#1c52a2);
+		border:1px solid #6985b3;
+		border-radius:2px;
+		position:absolute;
+		left:8px;
+		top:-4px;
+	}
+	.btn_22 span:after{
+		display:block;
+		content:"";
+		width:28px;
+		height:25px;
+		background:url(../images/main/ico02.png) no-repeat center;
+		background-size:auto 22px;
+	}
+	.btn_23 span{
+		display:block;
+		background-image:-webkit-linear-gradient(#df1d16,#9a1d20);
+		border:1px solid #ab666a;
+		border-radius:2px;
+		position:absolute;
+		left:8px;
+		top:-4px;
+	}
+	.btn_23 span:after{
+		display:block;
+		content:"";
+		width:28px;
+		height:25px;
+		background:url(../images/main/ico03.png) no-repeat center;
+		background-size:auto 22px;
+	}
+	.btn_24 span{
+		display:block;
+		background-image:-webkit-linear-gradient(#98b540,#609437);
+		border:1px solid #a3bb98;
+		border-radius:2px;
+		position:absolute;
+		left:8px;
+		top:-4px;
+	}
+	.btn_24 span:after{
+		display:block;
+		content:"";
+		width:28px;
+		height:25px;
+		background:url(../images/main/ico04.png) no-repeat center;
+		background-size:auto 22px;
+	}
+	#shortcut .second li button:hover{color:red;}
+	
+	#menu_btn {
+		width: 940px;
+		height: 200px;
+		text-align:center;
+		margin-left: 20px;
+		position: absolute;
+		border:2px solid #000;
+		background-color:#fff;
+	}
+	#menu_btn div{
+		display:inline-block;
+		width:150px;
+		margin:10px;
+		height:150px;
+	}
+	#menu_btn div:hover{
+		border:1px solid green;
+		transition: 1.0s; /* event 전환 효과 1초*/
+	}
+	#menu_btn .pays a img{
+		margin-bottom:18px;
+	}
+	
+	
