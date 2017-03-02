@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.camport.login.model.DAO.LoginDAO;
 import com.camport.login.model.DTO.LoginDTO;
@@ -31,6 +32,13 @@ public class Login extends HttpServlet {
 		ArrayList<LoginDTO> mlist = mdao.mlist();
 		
 		 
+		
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("id") != null) {
+			
+			session.removeAttribute("id");
+		}
 		
 		
 				

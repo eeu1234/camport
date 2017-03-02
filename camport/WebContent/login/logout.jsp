@@ -7,7 +7,12 @@
 <title></title>
 </head>
 <script>
-location.href="/camport/adminNotice/list.jsp";
+
+
+location.href="/camport/adminNotice/list.do";
+
+
+
 </script>
 <body>
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<div id="header">
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
@@ -39,9 +40,22 @@
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					
-					<form method="GET" action="/camport/login/logout.do">
+					
+					<form method="POST" action="/camport/logout.do">
 					<ul class="nav navbar-nav navbar-right">
-						<li><input type="button" value="로그아웃" class="btn btn-default"></li>
+					
+					<c:if test="${empty id}">
+					<li><input type="button" value="로그인" onclick="location.href='/camport/login.do';" class="btn btn-default"></li>
+					</c:if>
+					
+					
+					<c:if test="${!empty id}">
+					<li id="logout"><input type="submit" value="로그아웃" class="btn btn-default"></li>
+					</c:if>
+					
+					
+					
+					
 					</ul>
 					</form>
 				</div>

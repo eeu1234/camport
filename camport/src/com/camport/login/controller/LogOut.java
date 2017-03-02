@@ -14,30 +14,20 @@ import javax.servlet.http.HttpSession;
 
 
 public class LogOut extends HttpServlet {
-	//ㅁㅁㅇasdasdasdasdasd
+
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
-	
-		
-		HttpSession session = request.getSession(); 
+		HttpSession session = request.getSession();
 		session.removeAttribute("id");
 		
-		
-		
-		
-				
-				
-				
-		
-		
-		
-		
-		RequestDispatcher dispatcher
-		= request.getRequestDispatcher("/adminNotice/list.jsp");
-	dispatcher.forward(request, response);		
 	
+		request.setAttribute("id",session);
+		
+	
+		RequestDispatcher dispatcher
+		= request.getRequestDispatcher("/login/logout.jsp");
+		dispatcher.forward(request, response);		
 		
 		
 	}

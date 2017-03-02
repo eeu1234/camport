@@ -61,10 +61,14 @@
 			<div id="btnList">
 				<input type="button" value="돌아가기"  class="btn btn-default"
 					onclick="location.href='/camport/adminNotice/list.do';">
+				<c:if test="${id == 'admin'}">
 				<input type="button" value="수정하기" class="btn btn-primary"
 					onclick="location.href='/camport/adminNotice/edit.do?seq=${dto.noticeBoardSeq}';">
+				</c:if>
+				<c:if test="${id == 'admin'}">
 				<input type="button" value="삭제하기" class="btn btn-primary" 
 					onclick="location.href='/camport/adminNotice/del.do?seq=${dto.noticeBoardSeq}';">
+				</c:if>
 			</div>
 		</div>
 	</div>

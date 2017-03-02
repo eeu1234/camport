@@ -120,7 +120,7 @@
   	<url-pattern>/login.do</url-pattern>
   </servlet-mapping>
   
-  <!--로그인 처리 -->
+  <!--로그아웃 처리 -->
     <servlet>
   	<servlet-name>LogOut</servlet-name>
   	<servlet-class>com.camport.login.controller.LogOut</servlet-class>

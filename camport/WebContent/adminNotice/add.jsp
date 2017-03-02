@@ -66,7 +66,9 @@ function dummy() {
 			</table>
 			<div id="btnList">
 				<input type="button" value="돌아가기" class="btn btn-default" onclick="history.back();">
+				<c:if test="${id == 'admin'}">
 				<input type="submit" value="글쓰기" class="btn btn-primary">
+				</c:if>
 			</div>
 		</form>
 		

@@ -51,6 +51,9 @@ function movepage() {
 function movepage2() {
 	location.href = "/camport/adminNotice/list.do?page=" + $(event.srcElement).val();
 }
+
+
+});
 	
 </script>
 </head>
@@ -148,7 +151,9 @@ function movepage2() {
 			
 			
 			<div id="btnList">
+				<c:if test="${id == 'admin'}">
 				<input type="button"value="글쓰기"class="btn btn-primary" onclick="location.href='/camport/adminNotice/add.do';">
+				</c:if>
 			</div>
 
 		</div>
