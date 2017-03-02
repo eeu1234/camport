@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 
 public class LogOut extends HttpServlet {
-
+	//asd
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
