@@ -22,52 +22,8 @@ public class AdminDTO {
 	private String noticeBoardFileName;
 	private String noticeBoardOrgFileName;
 	private String noticeBoardRegdate;
-	private int noticeBoardThread;
-	private int noticeBoardDepth;
-	
-	//추가
 	
 	private String newimg;
-	private String commentcount; 	//댓글수
-	private String filename;		//첨부파일명
-	private String orgfilename;		//첨부파일명(원본)
-	
-	
-
-	
-	
-	public int getNoticeBoardThread() {
-		return noticeBoardThread;
-	}
-	public void setNoticeBoardThread(int noticeBoardThread) {
-		this.noticeBoardThread = noticeBoardThread;
-	}
-	public int getNoticeBoardDepth() {
-		return noticeBoardDepth;
-	}
-	public void setNoticeBoardDepth(int noticeBoardDepth) {
-		this.noticeBoardDepth = noticeBoardDepth;
-	}
-	
-	public String getCommentcount() {
-		return commentcount;
-	}
-	public void setCommentcount(String commentcount) {
-		this.commentcount = commentcount;
-	}
-	public String getFilename() {
-		return filename;
-	}
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
-	public String getOrgfilename() {
-		return orgfilename;
-	}
-	public void setOrgfilename(String orgfilename) {
-		this.orgfilename = orgfilename;
-	}
-
 	
 	
 
@@ -173,10 +129,6 @@ public class AdminDTO {
 	}
 	public void setAdminPassword(String adminPassword) {
 		this.adminPassword = adminPassword;
-	}
-	public String getSubject() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

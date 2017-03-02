@@ -49,7 +49,7 @@ function dummy() {
 	<div id="main">
 		<%@include file="/inc/top.jsp" %>
 	<div id="middle">
-		<form method="POST" action="/camport/adminNotice/addok.do" enctype="multipart/form-data">
+		<form method="POST" action="/camport/adminNotice/addok.do">
 			<table id="tbl1" class="table table-striped">
 				<tr>
 					<th>아이디</th>
@@ -68,15 +68,16 @@ function dummy() {
 				<input type="button" value="돌아가기" class="btn btn-default" onclick="history.back();">
 				<input type="submit" value="글쓰기" class="btn btn-primary">
 			</div>
-			
-		
-		<input type="hidden" name="mode" value="${mode}">
-		<input type="hidden" name="noticeBoardSeq" value="${noticeBoardSeq}">
 		</form>
 		
 	</div><!--middle-->
 	<%@include file="/inc/bottom.jsp" %>
 	</div><!--main-->
+
+
+
+
+	
 
 </body>
 </html>

@@ -38,9 +38,12 @@
 						</div>
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
+					
+					<form method="GET" action="/camport/login/logout.do">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Link</a></li>
+						<li><input type="button" value="로그아웃" class="btn btn-default"></li>
 					</ul>
+					</form>
 				</div>
 			</div>
 		</nav>

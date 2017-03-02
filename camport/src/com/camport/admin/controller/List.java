@@ -1,7 +1,6 @@
 package com.camport.admin.controller;
 
 import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,15 +16,14 @@ import com.camport.admin.model.DAO.AdminDAO;
 import com.camport.admin.model.DTO.AdminDTO;
 import com.camport.admin.model.DTO.AdminSDTO;
 
-public class List extends HttpServlet {
 
-	@Override
-	protected void doGet(HttpServletRequest request
-											, HttpServletResponse response) 
-														throws ServletException, IOException {
-		
+public class List extends HttpServlet{
 	
-		//페이징 -> 게시판의 꽃
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
 		int nowpage = 0;			//현재 페이지 번호
 		int totalCount = 0;			//총 게시물 수
 		int pageSize = 10;			//한페이지에 보여줄 게시물 수
@@ -35,72 +33,60 @@ public class List extends HttpServlet {
 		int n = 0, loop = 0;			//페이지바에 사용
 		int blockSize = 10;
 		
-		
-		//list.do -> list.do?page=1
-		//list.do?page=5
 		String page = request.getParameter("page");
 		
-		if (page == null) {
-			nowpage = 1; //그냥 들어오면 무조건 첫페이지를 보여주자
+		if(page == null) {
+			nowpage = 1;
 		} else {
 			nowpage = Integer.parseInt(page);
 		}
-		
-		//nowpage -> start, end 범위 계산
-		//1page -> 1 ~ 10
-		//2page -> 11 ~ 20
-		//..
-		//9page -> 91 ~ 100
-		start = ((nowpage - 1) * pageSize) + 1;
+		start = ((nowpage -1) * pageSize) + 1;
 		end = start + pageSize - 1;
+				
 		
-
-		//list.do
-		//list.do?column=&word=
 		
-		/*String column = request.getParameter("column");
+		//검색
+		String column = request.getParameter("column");
 		String word = request.getParameter("word");
-	
+		
 		boolean isSearch = false;
-		if ((column != null && word != null) &&
+		if((column != null && word != null) &&
 				(column != "" && word != "")) {
 			isSearch = true;
-		}*/
+		}
 		
 		
-		//1. DB 작업(select) -> DAO 위임
-		//2. 반환된 목록을 JSP 에게 건네주면서 호출하기
+		
+		
+		
+		
 		
 		//1.
 		AdminDAO dao = new AdminDAO();
 		
 		AdminSDTO sdto = new AdminSDTO();
-		/*sdto.setColumn(column);
+		sdto.setColumn(column);
 		sdto.setWord(word);
-		sdto.setSearch(isSearch);*/
+		sdto.setSearch(isSearch);
 		
-		
-		//페이징 때문에 추가
+		//페이징추가
 		sdto.setStart(start);
 		sdto.setEnd(end);
 		
 		totalCount = dao.getTotal(sdto);
-		totalPage = (int)Math.ceil((double)totalCount / pageSize);
+		totalPage =(int)Math.ceil((double)totalCount / pageSize);
 		
 		ArrayList<AdminDTO> list = dao.list(sdto);
 		
-		//1.5 일부 데이터 조작
-		for (AdminDTO dto : list) {
+		//1.5데이터 조작
+		for (AdminDTO dto :list) {
 			
-			
-			//최신글인지 검사?
 			SimpleDateFormat format
-				= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			 try {
-				 
+			= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			
+			try {
 				Date regdate = format.parse(dto.getNoticeBoardRegdate());
-				//System.out.println("hi"+dto.getNoticeBoardRegdate());
-				long regdateTick = regdate.getTime();//글쓴 시각의 tick
+				long regdateTick = regdate.getTime();
 				
 				long span = System.currentTimeMillis() - regdateTick;
 				
@@ -109,69 +95,56 @@ public class List extends HttpServlet {
 					//System.out.println("최신글");
 					dto.setNewimg("<img src='/camport/images/new.png'>");
 				} else {
-					//System.out.println("오래된글");
-					//dto.setNewimg("");
+				
 				}
 				
-			} catch (ParseException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			
 			//날짜 자르기
-			//dto.setNoticeBoardRegdate(dto.getNoticeBoardRegdate().substring(0,10));
+			dto.setNoticeBoardRegdate(dto.getNoticeBoardRegdate().substring(0,10));
 			
-			
-			//System.out.println(dto.getNoticeBoardRegdate());
-			//이름+제목은 태그 사용불가
-			//	dto.setNoticeBoardName(dto.getNoticeBoardName().replace("<","&lt;").replace(">","&gt;"));
-				//System.out.println("2");
-				//제목 길면 자르기
-				/*String noticeBoardName = dto.getNoticeBoardName();
-				if(noticeBoardName.length() > 30) {
-					noticeBoardName = noticeBoardName.substring(0,30) + "..";
-				}
-				dto.setNoticeBoardName(noticeBoardName);*/
-			
-			
-			
-			//검색 중이면 검색어를 부각시키기
-			//	- 게시판 테스트중입니다.
-			//	- 게시판 <span style='color:red;'>테스트</span>중입니다.
-			
-			/*if (isSearch && column.equals("subject")) {
-				noticeBoardName = dto.getNoticeBoardName()
-					.replace(word, String.format("<span style='color:red;background-color:yellow;'>%s</span>", word));
+			//제목 자르기
+			String noticeBoardName = dto.getNoticeBoardName();
+			/*if(noticeBoardName.length() > 30) {
+				noticeBoardName = noticeBoardName.substring(0, 30) + "..";
 				
+			}*/
+			/*dto.setNoticeBoardName(noticeBoardName);*/
+			
+			
+			//검색어 부각
+			if (isSearch && column.equals("noticeBoardName")){
+				noticeBoardName = dto.getNoticeBoardName()
+						.replace(word,String.format("<span style='color:red;background-color:yellow;'>%s</span>",word));
 				dto.setNoticeBoardName(noticeBoardName);
 			}
-			*/
-			
 		}//for
 		
-
 		
-		//조회수 증가 방지 티켓
-		//서블릿에서 세션 객체 얻는 방법
 		HttpSession session = request.getSession();
-		session.setAttribute("readcount", "n");
-	
+		session.setAttribute("noticeBoardReadcount", "n");
+		
+		
+		
+		
 		
 		//페이지바 만들기
 		String pagebar = "";
-	
 		
-		loop = 1;	//페이지 번호를 만드는 루프 담당
-		n = ((nowpage - 1) / blockSize) * blockSize + 1; //페이지 번호 역할(시작 번호)
-		
-		pagebar += "<nav><ul class='pagination'>";		
+		loop=1;//페이지번호
+		n = ((nowpage - 1) / blockSize) * blockSize + 1;
 		
 		
-		if (n == 1) {
+		pagebar += "<nav><ul class='pagination'>";
+		
+		
+		if(n == 1) {
 			pagebar += String.format("<li class='disabled'><a href='#' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>");
-		} else {
+		}else{
 			pagebar += String.format("<li><a href='/camport/adminNotice/list.do?page=%d' aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>", n - 1);
 		}
-		
 		
 		while (!(loop > blockSize || n > totalPage)) {
 			
@@ -186,7 +159,6 @@ public class List extends HttpServlet {
 			loop++;
 			
 		}//페이지 번호 while
-
 		
 		if (n > totalPage) {
 			pagebar += String.format("<li class='disabled'><a href='#' aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>");
@@ -197,9 +169,6 @@ public class List extends HttpServlet {
 		
 		pagebar += "</ul></nav>";
 		
-		
-		
-		//2.
 		request.setAttribute("list", list);
 		request.setAttribute("sdto", sdto);
 		request.setAttribute("totalCount", totalCount);
@@ -207,23 +176,17 @@ public class List extends HttpServlet {
 		request.setAttribute("nowpage", nowpage);
 		request.setAttribute("pagebar", pagebar);
 		
-		RequestDispatcher dispatcher
-			= request.getRequestDispatcher("/adminNotice/list.jsp");
-		dispatcher.forward(request, response);		
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/adminNotice/list.jsp");
+		dispatcher.forward(request, response);
+		
+		
 		
 	}
 	
-}
-
-
-
-
-
-
-
-
-
-
-
-
+		
+		
+	}
+	
+	
 

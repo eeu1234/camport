@@ -19,6 +19,14 @@ public class View extends HttpServlet {
 		
 		//1.
 		int noticeBoardSeq =Integer.parseInt(request.getParameter("seq"));
+		String column = request.getParameter("column");
+		String word = request.getParameter("word");
+		
+		boolean isSearch = false;
+		if ((column != null && word != null) &&
+					(column != "" && word != "")) {
+			isSearch = true;
+		}
 		
 		//2.
 		AdminDAO dao = new AdminDAO();
@@ -26,10 +34,11 @@ public class View extends HttpServlet {
 		//2.3 조회수 증가하기
 		HttpSession session = request.getSession();
 		
-		if(session.getAttribute("NOTICE_BOARD_READCOUNT") != null
-					&& session.getAttribute("NOTICE_BOARD_READCOUNT").equals("n")) {
+		if(session.getAttribute("noticeBoardReadcount") != null
+					&& session.getAttribute("noticeBoardReadcount").equals("n")) {
 			dao.addReadCount(noticeBoardSeq);
-			session.setAttribute("NOTICE_BOARD_READCOUNT", "y");
+			
+			session.setAttribute("noticeBoardReadcount", "y");
 		}
 		
 		AdminDTO dto = dao.get(noticeBoardSeq);

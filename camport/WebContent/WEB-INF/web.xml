@@ -96,6 +96,50 @@
   	<servlet-name>DelOk</servlet-name>
   	<url-pattern>/adminNotice/delok.do</url-pattern>
   </servlet-mapping>
+  
+  
+  
+   <!--로그인 처리 -->
+    <servlet>
+  	<servlet-name>LoginOk</servlet-name>
+  	<servlet-class>com.camport.login.controller.LoginOk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginOk</servlet-name>
+  	<url-pattern>/login/loginok.do</url-pattern>
+  </servlet-mapping>
+  
+
+  <!--로그인 처리 -->
+    <servlet>
+  	<servlet-name>Login</servlet-name>
+  	<servlet-class>com.camport.login.controller.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Login</servlet-name>
+  	<url-pattern>/login.do</url-pattern>
+  </servlet-mapping>
+  
+  <!--로그인 처리 -->
+    <servlet>
+  	<servlet-name>LogOut</servlet-name>
+  	<servlet-class>com.camport.login.controller.LogOut</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LogOut</servlet-name>
+  	<url-pattern>/logout.do</url-pattern>
+  </servlet-mapping>
+  
+    <!--회원가입 처리 -->
+    <servlet>
+  	<servlet-name>Join</servlet-name>
+  	<servlet-class>com.camport.login.controller.Join</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Join</servlet-name>
+  	<url-pattern>/join.do</url-pattern>
+  </servlet-mapping>
+    
     
     
 </web-app>

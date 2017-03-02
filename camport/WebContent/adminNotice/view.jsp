@@ -22,6 +22,12 @@
 #btnList { width: 800px; margin: 30px auto; }
 	
 </style>
+<script>
+
+
+
+
+</script>
 </head>
 <body>
 
@@ -38,10 +44,7 @@
 					<th>제목</th>
 					<td>${dto.noticeBoardName}</td>
 				</tr>
-			<%-- 	<tr>
-					<th>아이디</th>
-					<td>${dto.adminId}</td>
-				</tr> --%>
+		
 				<tr style="height:300px;">
 					<th style="vertical-align:middle;">내용</th>
 					<td style="vertical-align:middle;">${dto.noticeBoardContent}</td>
