@@ -195,7 +195,7 @@
 				</div>
 			</div><!-- 버튼 바로가기 메뉴 -->
 		</div>	<!--  mains END -->
-		<%@include file="/inc/bottom.jsp" %>
+		<%@include file="/inc/Dark_footer.jsp" %>
 	</div>
 
 </body>

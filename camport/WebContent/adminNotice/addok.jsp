@@ -33,7 +33,7 @@ $(document).ready(function() {
 	<div id="main">
 		<%@include file="/inc/top.jsp" %>
 		<div id="middle"></div>
-		<%@include file="/inc/bottom.jsp" %> %>
+		<%@include file="/inc/Dark_footer.jsp" %> %>
 	</div>
 	
 

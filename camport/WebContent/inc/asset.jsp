@@ -19,3 +19,6 @@
 <!-- User -->
 <link rel="stylesheet" type="text/css" href="/camport/css/home.css" />
 <link rel="stylesheet" type="text/css" href="/camport/css/reset.css" />
+
+<!-- Dark Footer -->
+<link rel="stylesheet" type="text/css" href="/camport/css/Dark_footer.css" />

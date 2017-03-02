@@ -1,21 +1,23 @@
 @charset "utf-8";
 
+/*
 @font-face {
   font-family: 'NanumGothic';
-  src: url('../font/NanumGothic.eot');
-  src: url('../font/NanumGothic.eot?#iefix') format('embedded-opentype'), /* ie 6,7,8 적용 embedded-opentype ie 8,9 적용 */
-       url('../font/NanumGothic.woff') format('woff'), /* ie 제외한 나머지 */
-       url('../font/NanumGothic.ttf') format('truetype'),
-       url('../font/NanumGothic.svg#NanumGothic') format('svg'); /*모바일브라우져를 위해서*/
+  src: url('../fonts/NanumGothic.eot');
+  src: url('../fonts/NanumGothic.eot?#iefix') format('embedded-opentype'), ie 6,7,8 적용 embedded-opentype ie 8,9 적용
+       url('../fonts/NanumGothic.woff') format('woff'), ie 제외한 나머지
+       url('../fonts/NanumGothic.ttf') format('truetype'),
+       url('../fonts/NanumGothic.svg#NanumGothic') format('svg'); 모바일브라우져를 위해서
 }
 @font-face {
   font-family: 'NanumGothicBold';
-  src: url('../font/NanumGothicBold.eot');
-  src: url('../font/NanumGothicBold.eot?#iefix') format('embedded-opentype'), /* ie 6,7,8 적용 embedded-opentype ie 8,9 적용 */
-       url('../font/NanumGothicBold.woff') format('woff'), /* ie 제외한 나머지 */
-       url('../font/NanumGothicBold.ttf') format('truetype'),
-       url('../font/NanumGothicBold.svg#NanumGothicBold') format('svg'); /*모바일브라우져를 위해서*/
+  src: url('../fonts/NanumGothicBold.eot');
+  src: url('../fonts/NanumGothicBold.eot?#iefix') format('embedded-opentype'), ie 6,7,8 적용 embedded-opentype ie 8,9 적용
+       url('../fonts/NanumGothicBold.woff') format('woff'), ie 제외한 나머지
+       url('../fonts/NanumGothicBold.ttf') format('truetype'),
+       url('../fonts/NanumGothicBold.svg#NanumGothicBold') format('svg'); 모바일브라우져를 위해서
 }
+*/
 
 /* Reset */
 body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,blockquote,strong,xmp,a{margin:0; padding:0; font-size:14px; line-height:20px; font-weight:normal; font-family: 'NanumGothic','NanumGothicBold'; color:#555;}

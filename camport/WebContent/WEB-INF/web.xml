@@ -139,6 +139,261 @@
   	<servlet-name>Join</servlet-name>
   	<url-pattern>/join.do</url-pattern>
   </servlet-mapping>
+  
+  
+  
+  <!-- 템플릿 페이지 -->
+	<servlet>
+		<servlet-name>Template</servlet-name>
+		<servlet-class>com.project.main.Template</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Template</servlet-name>
+		<url-pattern>/camport.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 목록(list) 페이지 -->
+	<servlet>
+		<servlet-name>List1</servlet-name>
+		<servlet-class>com.project.main.List</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>List1</servlet-name>
+		<url-pattern>/list.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 글 상세보기(view) 페이지 -->
+	<servlet>
+		<servlet-name>View1</servlet-name>
+		<servlet-class>com.project.main.View</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>View1</servlet-name>
+		<url-pattern>/view.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 글쓰기폼(add) 페이지 -->
+	<servlet>
+		<servlet-name>Add1</servlet-name>
+		<servlet-class>com.project.main.Add</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Add1</servlet-name>
+		<url-pattern>/add.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 글쓰기처리(addok) 페이지 -->
+	<servlet>
+		<servlet-name>AddOk1</servlet-name>
+		<servlet-class>com.project.main.AddOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddOk1</servlet-name>
+		<url-pattern>/addok.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 로그인폼(loginPage) 페이지 -->
+	<servlet>
+		<servlet-name>LoginPage</servlet-name>
+		<servlet-class>com.project.main.LoginPage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginPage</servlet-name>
+		<url-pattern>/loginPage.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 글삭제폼(del) 페이지 -->
+	<servlet>
+		<servlet-name>Del</servlet-name>
+		<servlet-class>com.project.main.Del</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Del</servlet-name>
+		<url-pattern>/del.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 글삭제처리(delok) 페이지 -->
+	<servlet>
+		<servlet-name>DelOk1</servlet-name>
+		<servlet-class>com.project.main.DelOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DelOk1</servlet-name>
+		<url-pattern>/delOk.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 수정하기 -->
+	<servlet>
+		<servlet-name>Edit1</servlet-name>
+		<servlet-class>com.project.main.Edit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Edit1</servlet-name>
+		<url-pattern>/edit.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 수정 완료 -->
+	<servlet>
+		<servlet-name>EditOk1</servlet-name>
+		<servlet-class>com.project.main.EditOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditOk1</servlet-name>
+		<url-pattern>/editok.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<!-- 댓글확인 -->
+	<servlet>
+		<servlet-name>ReportCommentOk</servlet-name>
+		<servlet-class>com.project.main.ReportCommentOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReportCommentOk</servlet-name>
+		<url-pattern>/reportCommentOk.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 댓글 삭제 --> 
+	<servlet>
+		<servlet-name>DelCommentOk</servlet-name>
+		<servlet-class>com.project.main.DelCommentOk</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DelCommentOk</servlet-name>
+		<url-pattern>/delCommentOk.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- 신고하기 --> 
+	<servlet>
+		<servlet-name>Police</servlet-name>
+		<servlet-class>com.project.main.Police</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Police</servlet-name>
+		<url-pattern>/police.do</url-pattern>
+	</servlet-mapping>
+	
+	
+		<!--  freeboardlist   -->
+  <servlet>
+  	<servlet-name>FreeBoardList</servlet-name>
+  	<servlet-class>com.project.freeboard.FreeBoardList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FreeBoardList</servlet-name>
+  	<url-pattern>/freeboard/freeboardlist.do</url-pattern>
+  </servlet-mapping>
+  
+  
+   <!-- freeboardview  -->
+  <servlet>
+  	<servlet-name>FreeBoardView</servlet-name>
+  	<servlet-class>com.project.freeboard.FreeBoardView</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FreeBoardView</servlet-name>
+  	<url-pattern>/freeboard/freeboardview.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- freeboardviewok  -->
+  <servlet>
+  	<servlet-name>FreeBoardViewOk</servlet-name>
+  	<servlet-class>com.project.freeboard.FreeBoardViewOk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FreeBoardViewOk</servlet-name>
+  	<url-pattern>/freeboard/freeboardviewok.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+   <!-- freeboardadd  -->
+  <servlet>
+  	<servlet-name>FreeBoardadd</servlet-name>
+  	<servlet-class>com.project.freeboard.FreeBoardAdd</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FreeBoardadd</servlet-name>
+  	<url-pattern>/freeboard/freeboardadd.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- freeboardaddok  -->
+  <servlet>
+  	<servlet-name>FreeBoardaddOk</servlet-name>
+  	<servlet-class>com.project.freeboard.FreeBoardAddOk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FreeBoardaddOk</servlet-name>
+  	<url-pattern>/freeboard/freeboardaddok.do</url-pattern>
+  </servlet-mapping>
+  
+   <!-- freeboarddel  -->
+  <servlet>
+  	<servlet-name>FreeBoardDel</servlet-name>
+  	<servlet-class>com.project.freeboard.FreeBoardDel</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FreeBoardDel</servlet-name>
+  	<url-pattern>/freeboard/freeboarddel.do</url-pattern>
+  </servlet-mapping>
+  
+    <!-- freeboarddelok  -->
+  <servlet>
+  	<servlet-name>FreeBoardDelOk</servlet-name>
+  	<servlet-class>com.project.freeboard.FreeBoardDelOk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FreeBoardDelOk</servlet-name>
+  	<url-pattern>/freeboard/freeboarddelok.do</url-pattern>
+  </servlet-mapping>
+  
+   <!-- freeboardedit  -->
+  <servlet>
+  	<servlet-name>FreeBoardEdit</servlet-name>
+  	<servlet-class>com.project.freeboard.FreeBoardEdit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FreeBoardEdit</servlet-name>
+  	<url-pattern>/freeboard/freeboardedit.do</url-pattern>
+  </servlet-mapping>
+  
+<!-- freeboardeditOK  -->
+  <servlet>
+  	<servlet-name>FreeBoardEditOk</servlet-name>
+  	<servlet-class>com.project.freeboard.FreeBoardEditOk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FreeBoardEditOk</servlet-name>
+  	<url-pattern>/freeboard/freeboardeditok.do</url-pattern>
+  </servlet-mapping>
+  
+   <!-- freecommentok  -->
+  <servlet>
+  	<servlet-name>FreeBoardCommentOk</servlet-name>
+  	<servlet-class>com.project.freeboard.FreeBoardCommentOk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FreeBoardCommentOk</servlet-name>
+  	<url-pattern>/freeboard/freeboardcommentok.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- freecommentdelok  -->
+  <servlet>
+  	<servlet-name>FreeBoardCommentDelOk</servlet-name>
+  	<servlet-class>com.project.freeboard.FreeBoardCommentDelOk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FreeBoardCommentDelOk</servlet-name>
+  	<url-pattern>/freeboard/freeboardcommentdelok.do</url-pattern>
+  </servlet-mapping>
+  
+  
     
     
     

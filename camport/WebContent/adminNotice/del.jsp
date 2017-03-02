@@ -68,7 +68,7 @@ function dummy() {
 		</form>
 		
 	</div><!--middle-->
-	<%@include file="/inc/bottom.jsp" %>
+	<%@include file="/inc/Dark_footer.jsp" %>
 	</div><!--main-->
 
 
