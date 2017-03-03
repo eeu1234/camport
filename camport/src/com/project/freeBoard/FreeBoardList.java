@@ -1,5 +1,6 @@
 package com.project.freeBoard;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -24,8 +25,13 @@ public class FreeBoardList extends HttpServlet {
 											, HttpServletResponse response) 
 														throws ServletException, IOException {
 		
-		String path = request.getRealPath("/board/files");
+		String path = "D:\\images";
 		System.out.println(path);
+		
+		File f = new File(path);
+        if(!f.isDirectory()){ //저장경로 폴더가 없을경우 
+           f.mkdirs();         // 폴더 생성 
+        }
 		
 		//페이징 -> 게시판의 꽃
 		int nowpage = 0;			//현재 페이지 번호

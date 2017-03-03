@@ -430,6 +430,16 @@
      <url-pattern>/freeboard/freeboardlist.do</url-pattern>
   </servlet-mapping>
   
+   <!-- freeboarddownload -->
+   <servlet>
+      <servlet-name>FreeBoardDownload</servlet-name>
+      <servlet-class>com.project.freeBoard.FreeBoardDownload</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>FreeBoardDownload</servlet-name>
+      <url-pattern>/freeboard/freeboarddownload.do</url-pattern>
+   </servlet-mapping>
+  
   
    <!-- freeboardview  -->
   <servlet>
@@ -440,19 +450,7 @@
      <servlet-name>FreeBoardView</servlet-name>
      <url-pattern>/freeboard/freeboardview.do</url-pattern>
   </servlet-mapping>
-  
-  <!-- freeboardviewok  -->
-  <servlet>
-     <servlet-name>FreeBoardViewOk</servlet-name>
-     <servlet-class>com.project.freeBoard.FreeBoardViewOk</servlet-class>
-  </servlet>
-  <servlet-mapping>
-     <servlet-name>FreeBoardViewOk</servlet-name>
-     <url-pattern>/freeboard/freeboardviewok.do</url-pattern>
-  </servlet-mapping>
-  
-  
-  
+    
    <!-- freeboardadd  -->
   <servlet>
      <servlet-name>FreeBoardadd</servlet-name>

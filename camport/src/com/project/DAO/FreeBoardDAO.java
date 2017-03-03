@@ -89,7 +89,7 @@ public class FreeBoardDAO {
 		
 		try {
 			
-			String sql="SELECT * FROM FREE_BOARD WHERE FREE_BOARD_SEQ = ?";
+			String sql="SELECT * FROM FREE_BOARD F JOIN REPORTBOARD_FILE R ON F.FREE_BOARD_SEQ = R.FREE_BOARD_SEQ WHERE F.FREE_BOARD_SEQ = ?";
 			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setString(1,freeBoardSeq);
 			
@@ -97,13 +97,16 @@ public class FreeBoardDAO {
 			
 			if(rs.next()){
 				FreeBoardDTO dto = new FreeBoardDTO();
-				dto.setUserId(rs.getString("USER_ID"));
-				dto.setFreeBoardContent(rs.getString("FREE_BOARD_CONTENT"));
-				dto.setFreeBoardDawncount(rs.getInt("FREE_BOARD_DOWNCOUNT"));
-				dto.setFreeBoardName(rs.getString("FREE_BOARD_NAME"));
-				dto.setFreeBoardReadcnt(rs.getInt("FREE_BOARD_READCNT"));
-				dto.setFreeBoardRegdate(rs.getString("FREE_BOARD_REGDATE"));
-				dto.setFreeBoardSeq(rs.getInt("FREE_BOARD_SEQ"));
+				dto.setUserId(rs.getString("F.USER_ID"));
+				dto.setFreeBoardContent(rs.getString("F.FREE_BOARD_CONTENT"));
+				dto.setFreeBoardDawncount(rs.getInt("F.FREE_BOARD_DOWNCOUNT"));
+				dto.setFreeBoardName(rs.getString("F.FREE_BOARD_NAME"));
+				dto.setFreeBoardReadcnt(rs.getInt("F.FREE_BOARD_READCNT"));
+				dto.setFreeBoardRegdate(rs.getString("F.FREE_BOARD_REGDATE"));
+				dto.setFreeBoardSeq(rs.getInt("F.FREE_BOARD_SEQ"));
+				dto.setReportBoardfileOrgname(rs.getString("R.REPORTBOARDFILE_ORGNAME"));
+				dto.setReportBoardfileSize(rs.getString("R.REPORTBOARDFILE_SIZE"));
+				dto.setReportBoardfileName(rs.getString("R.REPORTBOARDFILE_NAME"));
 							
 				return dto;
 			}
@@ -178,57 +181,60 @@ public class FreeBoardDAO {
 
 			int result = 0;
 			
-			String sql = "INSERT INTO FREE_BOARD ( FREE_BOARD_NAME, FREE_BOARD_CONTENT, FREE_BOARD_READCNT, FREE_BOARD_DOWNCOUNT, FREE_BOARD_REGDATE, USER_ID, FREE_BOARD_PW) "
-					+ "VALUES (?,?,DEFAULT,DEFAULT,DEFAULT,?,?)";
-			PreparedStatement stat = conn.prepareStatement(sql);
+			String sql1 = "INSERT INTO FREE_BOARD ( FREE_BOARD_NAME, FREE_BOARD_CONTENT, FREE_BOARD_READCNT, FREE_BOARD_DOWNCOUNT, FREE_BOARD_REGDATE, USER_ID, FREE_BOARD_PW) VALUES (?,?,DEFAULT,DEFAULT,DEFAULT,?,?)";
+			PreparedStatement stat1 = conn.prepareStatement(sql1);
 			//stat.setInt(1, dto.getFreeBoardSeq());
-			stat.setString(1, dto.getFreeBoardName());
-			stat.setString(2, dto.getFreeBoardContent());
-			stat.setString(3, dto.getUserId());
-			stat.setString(4, dto.getFreeboardPw());
+			stat1.setString(1, dto.getFreeBoardName());
+			stat1.setString(2, dto.getFreeBoardContent());
+			stat1.setString(3, dto.getUserId());
+			stat1.setString(4, dto.getFreeboardPw());
 			
-			System.out.println("FREE_BOARD");
+			System.out.println("Insert");
+			System.out.println(sql1);
 			
-			result = stat.executeUpdate();
+			result = stat1.executeUpdate();
+			
+			
+			String sql2 ="SELECT FREE_BOARD_SEQ,FREE_BOARD_NAME, FREE_BOARD_CONTENT,FREE_BOARD_READCNT,FREE_BOARD_DOWNCOUNT,FREE_BOARD_REGDATE,USER_ID,FREE_BOARD_PW FROM FREE_BOARD ORDER BY FREE_BOARD_SEQ DESC LIMIT 0,1;";
+			PreparedStatement stat2 = conn.prepareStatement(sql2);
+			ResultSet rs1 = stat2.executeQuery();
 
-			sql ="SELECT FREE_BOARD_SEQ,FREE_BOARD_NAME, FREE_BOARD_CONTENT,FREE_BOARD_READCNT,FREE_BOARD_DOWNCOUNT,FREE_BOARD_REGDATE,USER_ID,FREE_BOARD_PW FROM FREE_BOARD";
-			stat = conn.prepareStatement(sql);
-			ResultSet rs = stat.executeQuery();
-			rs =stat.executeQuery();
-			/*
-			while(rs.next()){
-				dto.setFreeBoardSeq(rs.getInt("FREE_BOARD_SEQ"));
-				dto.setFreeBoardName(rs.getString("FREE_BOARD_NAME"));
-				dto.setFreeBoardContent(rs.getString("FREE_BOARD_CONTENT"));
-				dto.setFreeBoardReadcnt(rs.getInt("FREE_BOARD_READCNT"));
-				dto.setFreeBoardDawncount(rs.getInt("FREE_BOARD_DOWNCOUNT"));
-				dto.setFreeBoardRegdate(rs.getString("FREE_BOARD_REGDATE"));
-				dto.setUserId(rs.getString("USER_ID"));
-				dto.setFreeboardPw(rs.getString("FREE_BOARD_PW"));
+			if (rs1.next()){
 				
-			}
-			*/
+				dto.setFreeBoardSeq(rs1.getInt("FREE_BOARD_SEQ"));
+				
+			}	
+			result= dto.getFreeBoardSeq();
+			
+			
+			System.out.println("select : "+rs1.getInt("FREE_BOARD_SEQ"));
+		
 			System.out.println("SELECT");
+			System.out.println(sql2);
 			
 			
+			String sql3 = "INSERT INTO REPORTBOARD_FILE ( FREE_BOARD_SEQ,REPORTBOARDFILE_SEQ,REPORTBOARDFILE_NAME, REPORTBOARDFILE_ORGNAME, REPORTBOARDFILE_SIZE, REPORTBOARDFILE_TYPE) "
+					+ "VALUES (?,?,?,?,?,?)" ;
+			PreparedStatement stat3 = conn.prepareStatement(sql3);
+			stat3.setInt(1, dto.getFreeBoardSeq());
+			stat3.setInt(2, dto.getReportBoardfileSeq());
+			stat3.setString(3, dto.getReportBoardfileName());
+			stat3.setString(4, dto.getReportBoardfileOrgname());
+			stat3.setDouble(5, dto.getFileSize());
+			stat3.setString(6, dto.getFileType());
 			
-			sql = "INSERT INTO REPORTBOARD_FILE ( FREE_BOARD_SEQ,REPORTBOARDFILE_SEQ,REPORTBOARDFILE_NAME, REPORTBOARDFILE_ORGNAME, REPORTBOARDFILE_SIZE, REPORTBOARDFILE_TYPE) "
-					+ "VALUES (?,?,?,?,'10','jjj')" ;
-			stat = conn.prepareStatement(sql);
-			stat.setInt(1, dto.getFreeBoardSeq());
-			stat.setInt(2, dto.getReportBoardfileSeq());
-			stat.setString(3, dto.getReportBoardfileName());
-			stat.setString(4, dto.getReportBoardfileOrgname());
+			System.out.println("dto.getFileType : " +dto.getFileType());
 			
 			//stat.setString(3, dto.getReportBoardfileSize());
-			//stat.setString(4, dto.getReportBoardFileType());
+			//stat.setString(4, dto.getReportBoardFileType()) 들어가는거에요 ?;누나 어던값이 1로
 			
 			System.out.println("seq");
 			System.out.println( dto.getFreeBoardSeq()); /*0*/
+			System.out.println("INSERT2");
+			System.out.println(sql3);
 			
-			result = stat.executeUpdate();
+			result = stat3.executeUpdate();
 			
-			System.out.println("INSERT");
 			
 			return result;//글쓰기
 
@@ -484,6 +490,28 @@ public class FreeBoardDAO {
 		
 		return null;
 	}
+	
+	
+	//freeboarddownload 
+	public void addDrCount(String freeBoardSeq) {
+		try {
+
+			String sql = "UPDATE FREE_BOARD SET FREE_BOARD_DOWNCOUNT = FREE_BOARD_DOWNCOUNT + 1 WHERE FREE_BOARD_SEQ = ?";
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setString(1, freeBoardSeq);
+			System.out.println("freeBoardSeq"+freeBoardSeq);
+			System.out.println("sql : " + sql) ;
+			
+			stat.executeUpdate();
+
+		} catch (Exception e) {
+
+			System.out.println(e.toString());
+
+		}
+		
+	}
+	
 	
 	
 	

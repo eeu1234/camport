@@ -17,13 +17,12 @@ public class FreeBoardDTO {
 	private String reportBoardfileName;
 	private String reportBoardfileOrgname;
 	private String reportBoardfileSize;
-	
-	
+
 	//추가?
 	private String newimg; 					//최신글 아이콘
 	private String commentcount;		//댓글수
-
-	
+	private String fileType;	
+	private double fileSize;
 	
 	
 	
@@ -117,6 +116,18 @@ public class FreeBoardDTO {
 	}
 	public void setFreeboardPw(String freeboardPw) {
 		this.freeboardPw = freeboardPw;
+	}
+	public String getFileType() {
+		return fileType;
+	}
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+	}
+	public double getFileSize() {
+		return fileSize;
+	}
+	public void setFileSize(double fileSize) {
+		this.fileSize = fileSize;
 	}
 	
 	

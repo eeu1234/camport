@@ -21,7 +21,6 @@
 						<li class="active"><a href="#" onclick="location.href='/camport/list.do';" title="현재 탭에서 메인 게시판으로 이동합니다.">Main Camport<span class="sr-only">(current)</span></a></li>
 						<li><a href="#" onclick="location.href='/camport/communication/list.do';" title="현재 탭에서 커뮤니케이션 화면으로 이동합니다.">SNS</a></li>
 						<li><a href="#" onclick="location.href='/camport/freeboard/freeboardlist.do';" title="현재 탭에서 무료서식 게시판으로 이동합니다.">Free Report</a></li>
-						<li><a href="#" onclick="location.href='/camport/police.do';" title="현재 탭에서 게시판 신고하기로 이동합니다.">Police Report</a></li>
 						<!-- 
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-expanded="false">Extra Menu

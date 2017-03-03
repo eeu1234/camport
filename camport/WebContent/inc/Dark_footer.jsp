@@ -29,7 +29,6 @@
 					</div>
 					<div class="col-md-6">
 						<ul class="list">
-							<li><a href="/camport/police.do">Report Police</a></li>
 							<li><a href="/camport/freeboard/freeboardadd.do">Free Write</a></li>
 							<li><a href="/camport/add.do">Point Write</a></li>
 						</ul>

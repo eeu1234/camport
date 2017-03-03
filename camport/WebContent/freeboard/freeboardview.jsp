@@ -42,6 +42,17 @@ $(document).ready(function() {
 		$(this).children().last().children().last().hide();
 	});
 
+
+	$("#fileDown").click(function(){
+        if(confirm("포인트가 차감 됩니다. 계속 하시겠습니까?"))
+        {
+        }
+        else
+        {
+           event.preventDefault();
+        }
+     })
+
 });
 
 
@@ -100,9 +111,18 @@ function delComment(freeCommentSeq, freeBoardSeq) {
 				</tr>
 				<tr>
 					<th>첨부파일</th>
-					<td> [${dto.freeBoardDawncount}]</td>
+					<td colspan="3"> 
+						<a href="/camport/freeboard/freeboarddownload.do?reportBoardfileName=${dto.reportBoardfileName}&reportBoardfileOrgname=${dto.reportBoardfileOrgname}"
+							 onclick="drcount()" id="fileDown">
+						${dto.reportBoardfileOrgname} <span style="font-size:13px; font-weight:bold; color:red; "> 다운수[${dto.freeBoardDawncount}]</span></a> 
+						
+						<input type="hidden" name="reportBoardfileName" value="${dto.reportBoardfileName}">
+						<input type="hidden" name="reportBoardfileOrgname" value="${dto.reportBoardfileOrgname}">
+					</td>
+				</tr>
+				<tr>
 					<th>조회수</th>
-					<td>${dto.freeBoardReadcnt}</td>
+					<td colspan="3">${dto.freeBoardReadcnt}</td>
 				</tr>
 				<tr>
 					<th>소개글</th>

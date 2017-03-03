@@ -56,7 +56,7 @@ public class FreeBoardView extends HttpServlet{
 		if (dto == null) {
 			response.setCharacterEncoding("UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("<script>alert('게시물이 이미 삭제되었거나 존재하지 않습니다.');location.href='/JSPTest/board/list.do';</script>");
+			out.println("<script>alert('게시물이 이미 삭제되었거나 존재하지 않습니다.');location.href='/MyTest/freeboard/freebaordlist.do';</script>");
 			out.close();
 			return;
 		}
