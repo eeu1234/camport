@@ -23,6 +23,21 @@ public class ReportBoardDTO {
 	private int thread;			 //계층형
 	private int depth;			//계층형
 	
+	private String filename;		//첨부파일명
+	private String orgfilename;		//첨부파일명(원본)
+	
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	public String getOrgfilename() {
+		return orgfilename;
+	}
+	public void setOrgfilename(String orgfilename) {
+		this.orgfilename = orgfilename;
+	}
 	public int getReportBoardSeq() {
 		return reportBoardSeq;
 	}
