@@ -59,9 +59,10 @@ function movepage2() {
 </head>
 <body>
 
-	<div id="main">
+	<div id="wrapper">
 		<%@include file="/inc/top.jsp"%>
 		<div id="middle">
+		<div class="alert alert-danger" role="alert" style="text-align:center; width:900px; margin:0 auto;"><strong style="font-weight:bold; color:blue;">공지사항</strong>에서는 글쓰기, 수정, 삭제는 <strong style="font-weight:bold; color:blue;">관리자 권한</strong>이 필요합니다</div>
 		<c:if test="${sdto.search}">
 		<div id="searchMsg">
 			'<c:choose><c:when test="${sdto.column == 'noticeBoardName'}">제목</c:when><c:when test="${sdto.column == 'noticeBoardContent'}">내용</c:when></c:choose>'에서 '${sdto.word}'을 검색했습니다.

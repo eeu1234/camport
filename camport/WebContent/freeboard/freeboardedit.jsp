@@ -45,7 +45,7 @@ function init() {
 		<%@include file="/inc/top.jsp" %>
 		<div id="middle">
 		
-		<form method="POST" action="/MyTest/freeboard/freeboardeditok.do">
+		<form method="POST" action="/camport/freeboard/freeboardeditok.do">
 		<table id="tbl1" class="table table-striped">
 			<tr>
 				<th>이름</th>

@@ -51,7 +51,7 @@ public class View extends HttpServlet {
 
 		
 		ReportBoardDTO dto = dao.get(reportBoardSeq); //글 1개 반환
-		
+		System.out.println(dto.getReportBoardFileName());
 		//2.4 존재않는 게시물에 접근하는 경우 예외 처리
 		if (dto == null) {
 			response.setCharacterEncoding("UTF-8");
@@ -98,6 +98,7 @@ public class View extends HttpServlet {
 		
 		
 		//첨부파일이 이미지면 본문에 보여주기
+		/*
 		if (dto.getReportBoardFileName() != null && !dto.getReportBoardFileName().equals("")) {
 			
 			//cat01.png, cat01.Png, cat01.PNG
@@ -106,6 +107,7 @@ public class View extends HttpServlet {
 			if (filename.endsWith(".png")
 					|| filename.endsWith(".jpg")
 					|| filename.endsWith(".jpeg")
+				//	|| filename.endsWith(".xls")
 					|| filename.endsWith(".gif")) {
 				
 				reportBoardContent = String.format("<div style='padding:20px 0px;'><img src='/camport/files/%s' id='attachimg'></div>", dto.getReportBoardFileName()) + dto.getReportBoardContent();
@@ -116,7 +118,7 @@ public class View extends HttpServlet {
 				
 			
 		}
-		
+		*/
 		//2.7 댓글 목록 가져오기
 		ArrayList<ReportCommentDTO> clist = dao.listComment(reportBoardSeq);
 				

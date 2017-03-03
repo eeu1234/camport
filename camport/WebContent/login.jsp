@@ -82,7 +82,108 @@
 		})
 
 	})
+
+	/*aJax 학교->단과대학 */
+	function ajaxCommList(event) {
+		var universeSeq = $(event.srcElement).val();
+		console.log(universeSeq);
+		//var str = $(event.srcElement).parents('form:first').serialize();
+		//var str = $(event.srcElement).parents('form:first').children();
+		var str = {
+			"universe" : universeSeq
+		};
+		console.log(str);
+		$.ajax({
+			type : "GET",
+			url : "/camport/login/selectmajor.do",
+			contentType : "application/x-www-form-urlencoded; charset=utf-8",
+			data : str,
+			datatype : "json",
+			success : function(data) {
+				if (data.length != 0) {
+					$.each(data, function(intValue, currentElement) {
+						var colNameVAL = "";
+						var colSeqVAL = "";
+						$.each(currentElement, function(key, value) {
+							//console.log(key);
+							//console.log(value);
+							if (key == "colName") {
+								colNameVal = value;
+							} else if (key == "colSeq") {
+								//console.log(value);
+								colSeqVal = value;
+							}
+
+						});
+						$("#collage").append(
+								"<option value="+colSeqVal+">" + colNameVal
+										+ "</option>");
+					});
+
+				} else {
+				}
+
+			},
+			error : function(e) {
+				//alert("에러발생");
+			}
+		});
+	}
+	/*aJax 단과->전공 */
+	function ajaxCommList2(event) {
+		var collageSeq = $(event.srcElement).val();
+		console.log(collageSeq);
+		//var str = $(event.srcElement).parents('form:first').serialize();
+		//var str = $(event.srcElement).parents('form:first').children();
+		var str = {
+			"collage" : collageSeq
+		};
+		console.log(str);
+		$.ajax({
+			type : "GET",
+			url : "/camport/login/selectmajor.do",
+			contentType : "application/x-www-form-urlencoded; charset=utf-8",
+			data : str,
+			datatype : "json",
+			success : function(data) {
+				if (data.length != 0) {
+					$.each(data, function(intValue, currentElement) {
+						var majorNameVAL = "";
+						var majorSeqVAL = "";
+						$.each(currentElement, function(key, value) {
+							//console.log(key);
+							//console.log(value);
+							if (key == "majorName") {
+								majorNameVAL = value;
+							} else if (key == "majorSeq") {
+								//console.log(value);
+								majorSeqVAL = value;
+							}
+
+						});
+						$("#major").append(
+								"<option value="+majorSeqVAL+">" + majorNameVAL
+										+ "</option>");
+					});
+
+				} else {
+				}
+
+			},
+			error : function(e) {
+				//alert("에러발생");
+			}
+		});
+	}
 </script>
+<!-- BG -->
+<div id="bg"></div>
+
+<!-- Scripts -->
+<script src="js/jquery.min.js"></script>
+<script src="js/skel.min.js"></script>
+<script src="js/util.js"></script>
+<script src="js/main.js"></script>
 <body>
 
 
@@ -106,20 +207,20 @@
 			</div>
 
 			<%-- <c:if test="${empty id}"> --%>
-				<form method="POST" action="/camport/login/loginok.do" id="frm">
-					<nav>
-						<ul>
-							<li><input type="text" required="required" placeholder="ID"
-								name="iid" id="iid" /></li>
-							<li><input type="password" required="required"
-								placeholder="PW" class="form-control" name="ppw" id="ppw" /></li>
-						</ul>
-						<li><a href="#contact" id="join">JOIN<img
-								src="/camport/images/click.png"></a></li>
+			<form method="POST" action="/camport/login/loginok.do" id="frm">
+				<nav>
+					<ul>
+						<li><input type="text" required="required" placeholder="ID"
+							name="iid" id="iid" /></li>
+						<li><input type="password" required="required"
+							placeholder="PW" class="form-control" name="ppw" id="ppw" /></li>
+					</ul>
+					<li><a href="#contact" id="join">JOIN<img
+							src="/camport/images/click.png"></a></li>
 
 
-					</nav>
-				</form>
+				</nav>
+			</form>
 			<%-- </c:if> --%>
 
 			<%-- <c:if test="${!empty id}">
@@ -153,37 +254,41 @@
 
 					<div class="field half first">
 						<label for="email">ID(E-mail)</label> <input type="email"
-							name="id" id="iid" />
+							name="userId" id="userId" />
 					</div>
 					<div class="field half">
 						<label for="password">PASSWORD</label> <input type="password"
-							name="pw" id="ppw" />
+							name="userPw" id="userPw" />
 					</div>
 
 					<div class="field half first">
-						<label for="name">NAME</label> <input type="text" name="name"
-							id="name" />
+						<label for="userName">NAME</label> <input type="text" name="userName"
+							id="userName" />
 					</div>
 
 					<div class="field half">
-						<label for="tel">TEL</label> <input type="text" name="tel"
-							id="tel" />
+						<label for="userTel">TEL</label> <input type="text" name="userTel"
+							id="userTel" />
 					</div>
 
 					<div>
-						<select>
+
+
+						<select id="universe" name="universe"
+							onchange="ajaxCommList(event);">
+							<option selected></option>
 							<c:forEach items="${list}" var="dto">
-								<option>${dto.uniname}</option>
+								<option value="${dto.uniSeq}">${dto.uniName}</option>
 							</c:forEach>
-						</select> <select>
-							<c:forEach items="${clist}" var="cdto">
-								<option>${cdto.colname}</option>
-							</c:forEach>
-						</select> <select>
-							<c:forEach items="${mlist}" var="mdto">
-								<option>${mdto.majorname}</option>
-							</c:forEach>
+						</select> 
+						<select id="collage" name="collage"
+							onchange="ajaxCommList2(event);">
+							<option selected></option>
 						</select>
+						 <select id="major" name="major">
+							<option selected></option>
+						</select>
+
 
 
 
@@ -212,14 +317,7 @@
 
 	</div>
 
-	<!-- BG -->
-	<div id="bg"></div>
 
-	<!-- Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/util.js"></script>
-	<script src="js/main.js"></script>
 
 </body>
 </html>

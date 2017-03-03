@@ -47,7 +47,7 @@
 
 </style>
 <script>
-$(document).ready(function() {
+/* $(document).ready(function() {
 
 	$("#tbl3 tr").on("mouseover", function() {
 		$(this).children().last().children().last().show();
@@ -60,7 +60,7 @@ $(document).ready(function() {
 		$("#attachimg").width(600);
 	}
 	
-});
+}); */
 
 function delComment(reportCommentSeq, reportBoardSeq) {
 	if (confirm("댓글을 삭제하겠습니까?")) {
@@ -95,6 +95,10 @@ function delComment(reportCommentSeq, reportBoardSeq) {
 				<tr>
 					<th>제목</th>
 					<td colspan="3" name="subject" id="subject">${dto.reportBoardName}</td>
+				</tr>
+				<tr>
+					<th>첨부파일</th>
+					<td colspan="3" name="attach" id="attach"><a href="C:\Users\adam\Downloads\eclipse\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\camport\files${dto.reportBoardFileName}">${dto.reportBoardFileName}</a></td>
 				</tr>
 				<tr style="height: 300px;">
 					<th style="vertical-align: middle;">내용</th>

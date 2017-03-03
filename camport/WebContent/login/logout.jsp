@@ -9,7 +9,7 @@
 <script>
 
 
-location.href="/camport/adminNotice/list.do";
+location.href="/camport/list.do";
 
 
 

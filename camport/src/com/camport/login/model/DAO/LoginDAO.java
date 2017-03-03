@@ -73,7 +73,7 @@ public class LoginDAO {
 			stat.setString(2, dto.getPw());
 			stat.setString(3, dto.getName());
 			stat.setString(4, dto.getTel());
-			stat.setString(5, dto.getMajorname());
+			stat.setString(5, dto.getMajorName());
 
 
 			return stat.executeUpdate();
@@ -90,7 +90,7 @@ public class LoginDAO {
 		
 		try {
 			
-			String sql = "SELECT UNIVERSITY_NAME FROM UNIVERSITY";
+			String sql = "SELECT UNIVERSITY_NAME,UNIVERSITY_SEQ FROM UNIVERSITY";
 			PreparedStatement stat = conn.prepareStatement(sql);
 			
 			ResultSet rs = stat.executeQuery();
@@ -98,8 +98,8 @@ public class LoginDAO {
 			ArrayList<LoginDTO> list = new ArrayList<LoginDTO>();
 			while(rs.next()) {
 				LoginDTO udto = new LoginDTO();
-				//udto.setUniname(rs.getString("uniname"));//시퀀스
-				udto.setUniname(rs.getString("UNIVERSITY_NAME"));
+				udto.setUniName(rs.getString("UNIVERSITY_NAME"));
+				udto.setUniSeq(rs.getString("UNIVERSITY_SEQ"));
 				list.add(udto);
 			}
 			return list;
@@ -113,12 +113,12 @@ public class LoginDAO {
 		return null;
 	}
 
-	public ArrayList<LoginDTO> clist() {
+	public ArrayList<LoginDTO> clist(String univSeq) {
 		
 		
 		try {
 			
-			String sql = "SELECT COLLAGE_NAME FROM COLLAGE";
+			String sql = "SELECT COLLAGE_NAME,COLLAGE_SEQ FROM COLLAGE WHERE UNIVERSITY_SEQ ="+univSeq;
 			PreparedStatement stat = conn.prepareStatement(sql);
 			
 			ResultSet rs = stat.executeQuery();
@@ -127,9 +127,11 @@ public class LoginDAO {
 			while(rs.next()) {
 				LoginDTO cdto = new LoginDTO();
 				
-				cdto.setColname(rs.getString("COLLAGE_NAME"));
+				cdto.setColName(rs.getString("COLLAGE_NAME"));
+				cdto.setColSeq(rs.getString("COLLAGE_SEQ"));
 				list.add(cdto);
 			}
+			
 			return list;
 			
 			
@@ -141,23 +143,24 @@ public class LoginDAO {
 		return null;
 	}
 
-	public ArrayList<LoginDTO> mlist() {
+	public ArrayList<LoginDTO> mlist(String colSeq) {
 			
-		
 		try {
 			
-			String sql = "SELECT MAJOR_NAME FROM MAJOR";
+			String sql = "SELECT MAJOR_NAME,MAJOR_SEQ,COLLAGE_SEQ FROM MAJOR WHERE COLLAGE_SEQ ="+colSeq;
 			PreparedStatement stat = conn.prepareStatement(sql);
-			
 			ResultSet rs = stat.executeQuery();
 			
 			ArrayList<LoginDTO> list = new ArrayList<LoginDTO>();
 			while(rs.next()) {
 				LoginDTO mdto = new LoginDTO();
 				
-				mdto.setMajorname(rs.getString("MAJOR_NAME"));
+				mdto.setMajorName(rs.getString("MAJOR_NAME"));
+				mdto.setMajorSeq(rs.getString("MAJOR_SEQ"));
 				list.add(mdto);
+				
 			}
+			
 			return list;
 			
 			

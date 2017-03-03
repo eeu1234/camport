@@ -50,7 +50,7 @@ function init() {
 		<%@include file="/inc/top.jsp" %>
 		<div id="middle">
 		
-		<form method="POST" action="/MyTest/freeboard/freeboarddelok.do">
+		<form method="POST" action="/camport/freeboard/freeboarddelok.do">
 		<table id="tbl1" class="table table-striped">
 			<tr>
 				<th>암호</th>

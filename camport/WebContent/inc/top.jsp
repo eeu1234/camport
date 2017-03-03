@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-	<div id="header">
+	<div id="header" style="width:1280px; margin:0 auto; text-align:center;" >
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -12,16 +12,17 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">study</a>
+					<a class="navbar-brand" href="/camport/adminNotice/list.do">Notice</a>
 				</div>
 
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-2">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#" onclick="location.href='/camport/camport.do';">main<span class="sr-only">(current)</span></a></li>
-						<li><a href="#" onclick="location.href='/camport/login.do';" title="현재 탭에서 로그인화면으로 이동합니다.">login / register</a></li>
-						<li><a href="#" onclick="location.href='/camport/list.do';" title="현재 탭에서 게시판 목록으로 이동합니다.">게시판 목록</a></li>
-						<li><a href="#" onclick="location.href='/camport/add.do';" title="현재 탭에서 게시판 글쓰기로 이동합니다.">글쓰기</a></li>
+						<li class="active"><a href="#" onclick="location.href='/camport/list.do';" title="현재 탭에서 메인 게시판으로 이동합니다.">Main Camport<span class="sr-only">(current)</span></a></li>
+						<li><a href="#" onclick="location.href='/camport/communication/list.do';" title="현재 탭에서 커뮤니케이션 화면으로 이동합니다.">SNS</a></li>
+						<li><a href="#" onclick="location.href='/camport/freeboard/freeboardlist.do';" title="현재 탭에서 무료서식 게시판으로 이동합니다.">Free Report</a></li>
+						<li><a href="#" onclick="location.href='/camport/police.do';" title="현재 탭에서 게시판 신고하기로 이동합니다.">Police Report</a></li>
+						<!-- 
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-expanded="false">Extra Menu
 								<span class="caret"></span>
@@ -34,7 +35,7 @@
 								<li><a href="#">point</a></li>
 								<li class="divider"></li>
 								<li><a href="#">notice</a></li>
-							</ul></li>
+							</ul></li> -->
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
@@ -43,23 +44,23 @@
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					
-					<form method="POST" action="/camport/logout.do">
 					<ul class="nav navbar-nav navbar-right">
 					
 					<c:if test="${empty id}">
-					<li><input type="button" value="로그인" onclick="location.href='/camport/login.do';" class="btn btn-default"></li>
+					<li style="padding:10px;"><input type="button" value="로그인" onclick="location.href='/camport/login.do';" class="btn btn-primary"></li>
 					</c:if>
 					
 					
 					<c:if test="${!empty id}">
-					<li id="logout"><input type="submit" value="로그아웃" class="btn btn-default"></li>
+					<form method="POST" action="/camport/login/logout.do">
+					<li id="logout" style="padding:10px;"><input type="submit" value="로그아웃" class="btn btn-default"></li>
+					</form>
 					</c:if>
 					
 					
 					
 					
 					</ul>
-					</form>
 				</div>
 			</div>
 		</nav>

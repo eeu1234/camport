@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 	<c:if test="${result == 1}">
 	alert("삭제하기 성공!!");
-	location.href = "/MyTest/freeboard/freeboardlist.do?freeBoardSeq=${freeBoardSeq}";
+	location.href = "/camport/freeboard/freeboardlist.do?freeBoardSeq=${freeBoardSeq}";
 	</c:if>
 
 	<c:if test="${result == 0}">

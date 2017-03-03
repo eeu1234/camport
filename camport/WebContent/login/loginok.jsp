@@ -17,7 +17,7 @@
 $(document).ready(function() {
 	<c:if test="${result == 1}">
 	alert("로그인을 성공하셨습니다.");
-	location.href="/camport/adminNotice/list.do";
+	location.href="/camport/list.do";
 	</c:if>
 
 	<c:if test="${result == 0}">
@@ -30,7 +30,7 @@ $(document).ready(function() {
 <body>
 
 	
-	<div id="main">
+	<div id="wrapper">
 		<%@include file="/inc/top.jsp" %>
 		<div id="middle"></div>
 		<%@include file="/inc/Dark_footer.jsp" %> %>

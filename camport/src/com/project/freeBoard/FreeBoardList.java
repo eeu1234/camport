@@ -114,7 +114,7 @@ public class FreeBoardList extends HttpServlet {
 				//1시간 이내
 				if ((span / 1000 / 60) < 60) {
 					//System.out.println("최신글");
-					dto.setNewimg("<img src='/camport/feeboard/board/images/new.png'>");
+					dto.setNewimg("<img src='/camport/images/new.png'>");
 				} else {
 					//System.out.println("오래된글");
 					//dto.setNewimg("");

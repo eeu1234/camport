@@ -61,6 +61,7 @@
 		<%@include file="/inc/top.jsp" %>
 		<div id="mains">
 			<div id="polices">
+				<div class="alert alert-danger" role="alert" style="text-align:center;"><strong style="font-weight:bold; color:blue;">신고하기</strong>페이지입니다. <span style="font-weight:bold; color:red; font-size:18px;">게시판 내에서 이동</span>하시면 신고가 접수됩니다.</div>
 				<div id="polices_title">
 					<h1>게시글 신고하기</h1>
 				</div>

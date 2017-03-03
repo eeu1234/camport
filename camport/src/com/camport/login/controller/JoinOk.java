@@ -29,13 +29,13 @@ public class JoinOk extends HttpServlet {
 		// 1.
 		request.setCharacterEncoding("UTF-8");
 			
-		String id = request.getParameter("iid");
-		String pw = request.getParameter("ppw");
-		String name = request.getParameter("name");
-		String tel = request.getParameter("tel");
-		String majorname = request.getParameter("majorname");
-		String uniname = request.getParameter("uniname");
-		String colname = request.getParameter("colname");
+		String id = request.getParameter("userId");
+		String pw = request.getParameter("userPw");
+		String name = request.getParameter("userName");
+		String tel = request.getParameter("userTel");
+		String uniSeq = request.getParameter("universe");
+		String colSeq = request.getParameter("collage");
+		String majorSeq = request.getParameter("major");
 		
 		
 		
@@ -46,16 +46,19 @@ public class JoinOk extends HttpServlet {
 		dto.setPw(pw);
 		dto.setName(name);
 		dto.setTel(tel);
-		dto.setMajorname(majorname);
-		dto.setUniname(uniname);
-		dto.setColname(colname);
+		dto.setUniName(uniSeq);
+		dto.setColName(colSeq);
+		dto.setMajorName(majorSeq);
 		
 		LoginDAO dao = new LoginDAO();
 		int result = dao.join(dto);
 			
 		
 		
-		
+		if(result == 1){
+			HttpSession session = request.getSession();
+			session.setAttribute("id", id);
+		}
 		
 		 
 		

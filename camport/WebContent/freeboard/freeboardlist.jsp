@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FreeBoardList_무료서식게사판리스트</title>
+<title>무료 서식 자료실</title>
 
 <meta http-equiv="Cache-Control" content="no-cache"/>   
 <meta http-equiv="Expires" content="0"/>				
@@ -32,16 +32,11 @@
 	<div id="wrapper" >
 		<%@include file="/inc/top.jsp" %>
 		<div id="main">
-			<div class="panel panel-default">
-			 <div class="panel-body">
-			   무료서식 게시판
-			  </div>
-			</div>
-			
-				<div id="rightcontent" class="btn-group-vertical" role="group" aria-label="...">
-					<div class="btn-group " role="group" > 
-						<button type="button" class="btn btn-default " >
-						서식
+			<div class="alert alert-warning " role="alert" style="text-align:center;"><strong style="font-weight:bold; color:blue;">무료 서식 자료실</strong>에서는 글쓰기, 수정, 삭제, 상세정보를 <strong style="font-weight:bold; color:red;">회원 유저</strong>이면 누구나 할 수 있습니다.</div>
+			<div id="rightcontent" class="btn-group-vertical" role="group" aria-label="...">
+					<div class="btn-group active" role="group"> 
+						<button type="button" class="btn btn-default active">
+						통합 서식
 						</button>
 					</div>
 					<div class="btn-group" role="group">
@@ -64,9 +59,7 @@
 				<table id="centertoptbl" class="table table-hover centertbl" >
 					<tr>
 						<th colspan="4">
-							<div class="panel-body">
-					    BEST 3
-					  </div>
+							<div class="alert alert-info" role="alert" style="text-align:center;"><strong style="font-weight:bold; color:blue;">BEST3 인기 게시글</strong>은 다운로드 횟수가 <span style="font-weight:bold; color:red; font-size:20px;">최상위 랭킹 3위</span> 기준입니다.</div><div id="rightcontent" class="btn-group-vertical" role="group" aria-label="...">
 						</th>
 					</tr>
 					<tr class="active">

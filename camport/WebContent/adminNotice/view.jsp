@@ -32,7 +32,7 @@
 <body>
 
 	<!--view.jsp  -->
-	<div id="main">
+	<div id="wrapper">
 		<%@include file="/inc/top.jsp" %>
 		<div id="middle">
 			<table id="tbl1" class="table tale-striped">
@@ -71,6 +71,7 @@
 				</c:if>
 			</div>
 		</div>
+		<%@include file="/inc/Dark_footer.jsp" %>
 	</div>
 	
 

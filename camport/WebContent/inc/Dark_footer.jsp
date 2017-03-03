@@ -5,7 +5,7 @@
 			<!-- <h2>Dark Footer</h2> -->
 		</div>
 		<!----------- Footer ------------>
-		<footer class="footer-bs">
+		<footer class="footer-bs" style="width:1280px; margin:0 auto;">
 			<div class="row">
 				<div class="col-md-3 footer-brand animated fadeInLeft">
 					<h3 class="Dark_title">HappComport info</h3>
@@ -20,29 +20,28 @@
 					<hr><!-- 제거 가능 -->
 					<div class="col-md-6">
 						<ul class="pages">
-							<li><a href="#">login & MyPage</a></li>
-							<li><a href="#">Notice</a></li>
-							<li><a href="#">Chrome</a></li>
-							<li><a href="#">Company</a></li>
-							<li><a href="#">Advice</a></li>
+							<li><a href="/camport/login.do">login / Join</a></li>
+							<li><a href="/camport/adminNotice/list.do">Notice</a></li>
+							<li><a href="/camport/communication/list.jsp">communication</a></li>
+							<li><a href="/camport/list.do">Main Report</a></li>
+							<li><a href="/camport/freeboard/freeboardlist.do">Free Down</a></li>
 						</ul>
 					</div>
 					<div class="col-md-6">
 						<ul class="list">
-							<li><a href="#">communication</a></li>
-							<li><a href="#">TeamView</a></li>
-							<li><a href="#">SNS</a></li>
-							<li><a href="#">Policy</a></li>
+							<li><a href="/camport/police.do">Report Police</a></li>
+							<li><a href="/camport/freeboard/freeboardadd.do">Free Write</a></li>
+							<li><a href="/camport/add.do">Point Write</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-2 footer-social animated fadeInDown">
-					<h4 class="Dark_title">Follow System</h4>
+					<h4 class="Dark_title">Quick Site Menu</h4>
 					<ul>
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Twitter</a></li>
-						<li><a href="#">Instagram</a></li>
-						<li><a href="#">KaKaoTalk</a></li>
+						<li><a href="https://www.google.co.kr/">Chrome</a></li>
+						<li><a href="https://www.naver.com">Naver</a></li>
+						<li><a href="http://www.nate.com/">Nate</a></li>
+						<li><a href="http://www.daum.net">Daum</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 footer-ns animated fadeInRight">

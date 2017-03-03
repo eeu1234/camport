@@ -118,7 +118,7 @@ public class List extends HttpServlet {
 			 dto.setReportBoardRegdate(dto.getReportBoardRegdate().substring(0,10));
 
 			//이름 + 제목은 태그 사용 불가능
-			dto.setUserId(dto.getUserId().replace("<", "&lt;").replace(">", "&gt;"));
+			//dto.setUserId(dto.getUserId().replace("<", "&lt;").replace(">", "&gt;"));
 			dto.setReportBoardName(dto.getReportBoardName().replace("<", "&lt;").replace(">", "&gt;"));
 			 
 			 //게시판 제목 자르기

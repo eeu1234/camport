@@ -30,7 +30,7 @@ $(document).ready(function() {
 <body>
 
 	<!--addok.jsp  -->
-	<div id="main">
+	<div id="wrapper">
 		<%@include file="/inc/top.jsp" %>
 		<div id="middle"></div>
 		<%@include file="/inc/Dark_footer.jsp" %> %>

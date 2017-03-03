@@ -46,7 +46,7 @@ function dummy() {
 <body>
 
 	<!--del.jsp  -->
-	<div id="main">
+	<div id="wrapper">
 		<%@include file="/inc/top.jsp" %>
 	<div id="middle">
 		<form method="POST" action="/camport/adminNotice/delok.do">
